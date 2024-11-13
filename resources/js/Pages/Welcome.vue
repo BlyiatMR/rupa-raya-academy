@@ -5,6 +5,7 @@ import Videos from '@/Components/Videos.vue';
 import ClassNew from '@/Components/ClassNew.vue';
 import WhyChooseMe from '@/Components/WhyChooseMe.vue';
 import Testimonial from '@/Components/Testimonial.vue';
+import Qna from '@/Components/Qna.vue';
 import CtaHome from '@/Components/CtaHome.vue';
 import Footer from '@/Components/Footer.vue';
 import { Head, Link } from '@inertiajs/vue3';
@@ -42,15 +43,19 @@ function handleImageError() {
 
         <div class="absolute -top-72 -left-72 blur-[80px] opacity-10 w-[50rem] h-[50rem] bg-blue-500 rounded-full -z-50"></div>
 
+        <Navbar></Navbar>
+
         <HeroSection></HeroSection>
 
-        <Videos></Videos>
+        <!-- <Videos></Videos> -->
 
         <WhyChooseMe></WhyChooseMe>
         
         <ClassNew></ClassNew>
 
         <Testimonial></Testimonial>
+
+        <Qna></Qna>
 
         <CtaHome></CtaHome>
 

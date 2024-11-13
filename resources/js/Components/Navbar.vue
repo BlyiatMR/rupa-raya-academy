@@ -1,59 +1,58 @@
+<script>
+    export default {
+    data() {
+        return {
+        isMenuOpen: false
+        };
+    },
+    methods: {
+        toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+        }
+    }
+    };
+</script>
 <template>
-    <div>
-        <nav id="nav" class=" w-full top-0 z-[999] py-4 px-5 lg:px-12 shadow-2xl">
-            <div class="max-w-[1440px] mx-auto flex justify-between items-center">
-                <div>
-                    <img class="w-32" src="http://ruparaya-academy.test/public/assets/logo/rralogo-outline.png" alt="">
-                </div>
-                <div class="md:flex gap-10 hidden text-[#273F5A] text-[15px] font-semibold">
-                    <a href="./index.php" class="hover:text-[#5386C0] duration-300">Beranda</a>
-                    <a href="./listing.php" class="hover:text-[#5386C0] duration-300">Kursus/Kelas</a>
-                    <a href="./about.php" class="hover:text-[#5386C0] duration-300">Tentang Kami</a>
-                    <a href="./testimonial.php" class="hover:text-[#5386C0] duration-300">Testimonial</a>
-                </div>
-                <div class="md:hidden block">
-                    <div id="resNav" class="rounded-md px-2 text-black">
-                        <i class="resBtn fas fa-bars"></i>
-                    </div>
-                    <div id="resMenu"
-                        class="fixed top-0 right-0 rounded-bl-[45px] p-10 bg-blue-rpr-thr-a2 text-white hidden resGoDown z-50">
-                        <div id="resNavClose" class="inline absolute rounded-md right-5 text-white">
-                            <i class="fas fa-x"></i>
-                        </div>
-                        <div class="block"></div>
-                        <div class="mb-8">
-                            <a class="mr-6 block border-b py-3" href="./index.php">Beranda</a>
-                            <a class="mr-6 block border-b py-3" href="./listing.php">Program/Kelas</a>
-                            <a class="mr-6 block border-b py-3" href="./about.php">Tentang Kami</a>
-                            <a class="mr-6 block border-b py-3" href="./testimonial.php">Testimonial</a>
-                        </div>
-                        <div class="flex flex-col items-start w-full">
-                            <div class="flex gap-5 mb-4">
-                                <a href="https://www.instagram.com/ruparaya.academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                                    target="_blank" aria-label="Instagram">
-                                    <img loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/eea0de67ff265db660885ad6d3abd371357cf57f513dccf68ddbc96fde317182?placeholderIfAbsent=true&apiKey=a5b7adda52cd4e0d82e5d20df8441ceb"
-                                        alt="" class="object-contain shrink-0 rounded-full aspect-square w-[35px]" />
-                                </a>
-                                <a href="https://www.tiktok.com/@ruparaya.academy?is_from_webapp=1&sender_device=pc"
-                                    target="_blank" aria-label="TikTok">
-                                    <img loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/c64d2ccd0f03d7da6e9fc2e58102a09ef727773fe900bc12fcdb7d3a23e25c5b?placeholderIfAbsent=true&apiKey=a5b7adda52cd4e0d82e5d20df8441ceb"
-                                        alt="" class="object-contain shrink-0 rounded-full aspect-square w-[35px]" />
-                                </a>
-                                <a href="https://www.youtube.com/@RupaRayaAcademy" target="_blank" aria-label="YouTube">
-                                    <img loading="lazy"
-                                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d042807ef59e5e09ff5748ddd5e28c69601bd7d0cb7b2f5fb2af68aae79242e7?placeholderIfAbsent=true&apiKey=a5b7adda52cd4e0d82e5d20df8441ceb"
-                                        alt="" class="object-contain shrink-0 rounded-full aspect-square w-[35px]" />
-                                </a>
-                            </div>
-                            <div class="text-sm">
-                                Copyright © 2024 Rupa Raya <br> Indonesia. All Rights Reserved
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-</template>
+    <nav class="fixed w-full shadow-2xl shadow-slate-950 bg-gray-950 bg-opacity-80 backdrop-blur-md z-[999]">
+      <div class="max-w-[1440px] mx-auto flex justify-between items-center py-5 px-5 lg:px-10 border-b border-gray-700">
+        <!-- Logo -->
+        <div>
+          <img class="w-40" src="/images/rralogo.jpg" alt="Logo">
+        </div>
+  
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex gap-10 border py-3 px-5 rounded-3xl border-gray-700 text-gray-400">
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
+        </div>
+  
+        <!-- Contact Button (Always Visible) -->
+        <div class="hidden lg:block text-gray-400">
+          <a href="#" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>
+        </div>
+  
+        <!-- Mobile Menu Icon -->
+        <div class="lg:hidden text-gray-400" @click="toggleMenu">
+          <button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+  
+      <!-- Mobile Menu -->
+      <div v-if="isMenuOpen" class="lg:hidden bg-gray-950 bg-opacity-80 backdrop-blur-md shadow-2xl shadow-slate-950 border-t border-gray-700">
+        <div class="flex flex-col items-center gap-4 py-5 text-gray-400">
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
+          <a href="#" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>
+        </div>
+      </div>
+    </nav>
+  </template>

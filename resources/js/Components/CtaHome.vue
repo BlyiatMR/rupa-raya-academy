@@ -1,8 +1,11 @@
 <template>
-    <section>
-        <div class="py-20">
-            <h1 class="mx-auto z-50 text-center leading-tight tracking-wide text-5xl font-extrabold mb-5 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Siap Mulai? Konsultasikan dengan Kami</h1>
-            <p class="max-w-4xl mx-auto z-50 text-center text-lg tracking-wide leading-tight text-gray-300">Jangan ragu untuk memulai perjalanan belajar Anda bersama Rupa Raya Academy.</p>
+    <section class="relative">
+
+        <div class="absolute top-20 -right-[15%] w-[52rem] h-80 bg-blue-500 rounded-full blur-3xl opacity-10 rotate-45"></div>
+        
+        <div class="max-w-[1440px] sm:mx-auto mx-5 py-20">
+            <h1 class="mx-auto z-50 text-center leading-tight tracking-wide sm:text-5xl text-3xl font-extrabold mb-5 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Siap Mulai? Konsultasikan dengan Kami</h1>
+            <p class="max-w-4xl mx-auto z-50 text-center tracking-wide leading-tight text-gray-300">Jangan ragu untuk memulai perjalanan belajar Anda bersama Rupa Raya Academy.</p>
             <div class="flex justify-center gap-x-5">
                 <div class="flex mt-10">
                     <a href="#" class="flex items-center gap-x-3 text-white bg-blue-600 text-lg tracking-wide py-3 px-4 rounded-lg font-semibold hover:-translate-y-1 duration-300">
