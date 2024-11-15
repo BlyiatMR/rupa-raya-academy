@@ -22,9 +22,9 @@
   
         <!-- Desktop Menu -->
         <div class="hidden lg:flex gap-10 border py-3 px-5 rounded-3xl border-gray-700 text-gray-400">
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
+          <a href="/" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
+          <a href="/listing" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
+          <a href="/about" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
         </div>
@@ -50,6 +50,7 @@
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
+          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
           <a href="#" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>
         </div>

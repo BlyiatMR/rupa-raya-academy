@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -12,6 +14,14 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
+});
+
+Route::prefix('/about')->group(function () {
+    Route::get('/', [AboutController::class, 'index'])->name('about.index');
+});
+
+Route::prefix('/listing')->group(function () {
+    Route::get('/', [ListingController::class, 'index'])->name('listing.index');
 });
 
 Route::get('/dashboard', function () {
