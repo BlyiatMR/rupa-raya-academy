@@ -47,9 +47,9 @@
       <!-- Mobile Menu -->
       <div v-if="isMenuOpen" class="lg:hidden bg-gray-950 bg-opacity-80 backdrop-blur-md shadow-2xl shadow-slate-950 border-t border-gray-700">
         <div class="flex flex-col items-center gap-4 py-5 text-gray-400">
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
+          <a href="/" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
+          <a href="/listing" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
+          <a href="/about" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
           <a href="#" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>

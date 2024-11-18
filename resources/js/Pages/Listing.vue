@@ -10,27 +10,53 @@ import Footer from '@/Components/Footer.vue';
 export default {
   data() {
     return {
-      kelasList: [
+      classSpecial: [
         {
-          nama: "Flutter Mobile Apps",
-          tanggal: "9 November 2024",
-          harga: "649.000",
+          name: "3D Architectural Rendering",
+          date: "09 November 2024",
+          price: "Rp. 1.800.000",
+          discount: "Rp. 899.000",
           iconPath:
-            "M5 8c.01-2.644.108-4.059 1.024-4.975C7.049 2 8.699 2 11.999 2s4.95 0 5.975 1.025c.916.916 1.013 2.33 1.023 4.975M5 16c.01 2.644.108 4.059 1.024 4.975C7.049 22 8.699 22 11.999 22s4.95 0 5.975-1.025c.916-.916 1.013-2.33 1.023-4.975M11 19h2m3-9l1.227 1.057c.515.445.773.667.773.943s-.258.498-.773.943L16 14m-8-4l-1.227 1.057C6.258 11.502 6 11.724 6 12s.258.498.773.943L8 14m5-5l-2 6",
+            "m12 3l7.794 4.5v7.845a2 2 0 0 1-1 1.732L13 20.423a2 2 0 0 1-2 0l-5.794-3.346a2 2 0 0 1-1-1.732V7.5z M12 7v5l-4.33 2.5M12 12l4.33 2.5",
         },
         {
-          nama: "Fullstack Web Development",
-          tanggal: "9 November 2024",
-          harga: "699.000",
+          name: "SketcUp 3D Modelling",
+          date: "09 November 2024",
+          price: "Rp. 1.398.000",
+          discount: "Rp. 699.000",
           iconPath:
-            "M14 2h-4c-3.28 0-4.919 0-6.081.814a4.5 4.5 0 0 0-1.105 1.105C2 5.08 2 6.72 2 10s0 4.919.814 6.081a4.5 4.5 0 0 0 1.105 1.105C5.08 18 6.72 18 10 18h4c3.28 0 4.919 0 6.081-.814a4.5 4.5 0 0 0 1.105-1.105C22 14.92 22 13.28 22 10s0-4.919-.814-6.081a4.5 4.5 0 0 0-1.105-1.105C18.92 2 17.28 2 14 2",
+          "M10.55 2.876L4.595 6.182a2.98 2.98 0 0 0-1.529 2.611v6.414a2.98 2.98 0 0 0 1.529 2.61l5.957 3.307a2.98 2.98 0 0 0 2.898 0l5.957-3.306a2.98 2.98 0 0 0 1.529-2.611V8.793a2.98 2.98 0 0 0-1.529-2.61L13.45 2.876a2.98 2.98 0 0 0-2.898 0Z M20.33 6.996L12 12L3.67 6.996M12 21.49V12",
         },
         {
-          nama: "UI/UX Design Mobile App",
-          tanggal: "9 November 2024",
-          harga: "649.000",
+          name: "3D Product & Photoshoot",
+          date: "09 November 2024",
+          price: "1.298.000",
+          discount: "699.000",
           iconPath:
-            "M2.5 12c0-4.478 0-6.718 1.391-8.109S7.521 2.5 12 2.5c4.478 0 6.718 0 8.109 1.391S21.5 7.521 21.5 12c0 4.478 0 6.718-1.391 8.109S16.479 21.5 12 21.5c-4.478 0-6.718 0-8.109-1.391S2.5 16.479 2.5 12m0-3h19M13 13h4m-4 4h2M7 6h.009M11 6h.009M9 9v12.5",
+            "M11.5 2.134a1 1 0 0 1 1 0l7.794 4.5a1 1 0 0 1 .5.866v7.845a3 3 0 0 1-1.5 2.598L13.5 21.29a3 3 0 0 1-3 0l-5.794-3.346a3 3 0 0 1-1.5-2.598V7.5a1 1 0 0 1 .5-.866zM12 6a1 1 0 0 1 1 1v4.423l3.83 2.211a1 1 0 1 1-1 1.732L12 13.155l-3.83 2.211a1 1 0 1 1-1-1.732L11 11.423V7a1 1 0 0 1 1-1",
+        },
+      ],
+      classGeneral: [
+        {
+          name: "Flutter Mobile Apps",
+          date: "09 November 2024",
+          img: "/images/bg-course.jpg",
+          price: "Rp. 1.200.000",
+          discount: "Rp. 750.000"
+        },
+        {
+          name: "Fullstack Web Development",
+          date: "02 November 2024",
+          img: "/images/bg-fullstack.jpg",
+          price: "Rp. 1.398.000",
+          discount: "Rp. 699.000"
+        },
+        {
+            name: "UI/UX Design Mobile App",
+            date: "02 September 2024",
+            img: "/images/bg-uiux.jpg",
+            price: "Rp. 998.000",
+            discount: "Rp. 449.000"
         },
       ],
     };
@@ -44,37 +70,38 @@ export default {
 
         <Navbar></Navbar>
 
-        <section class="h-screen">
-            <div class="max-w-[1440px] sm:mx-auto mx-5 sm:py-40 py-10">
+        <section>
+            <div class="max-w-[1440px] sm:mx-auto mx-5 sm:pt-40 sm:pb-30 py-10">
                 <div class="mb-10">
                     <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Daftar Kursus/Kelas</h1>
                     <p class="text-base text-gray-300 text-center tracking-wide">Pilih Kelas Yang Anda Butuhkan Untuk Belajar</p>
                 </div>
 
                 <div class="mt-20">
-                    <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Kelas Khusus</h1>
+                    <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Kelas Umum <span class="border border-gray-300 px-2 rounded-full">3</span></h1>
 
-                    <div class="relative flex gap-10 justify-center mt-10 mb-20">
+                    <div class="relative flex flex-wrap gap-10 justify-center mt-10 mb-20">
 
+                        <div v-for="(special, index) in classSpecial" :key="index" class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-xl shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
 
-                        <!-- Permanent Class -->
-                        <div v-for="(kelas, index) in kelasList" :key="index" class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-xl shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300">
-
-                            <svg class="absolute -top-4 -right-14 opacity-10 rotate-12 w-64" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="kelas.iconPath" color="white"/></svg>
+                            <svg class="absolute -top-4 -right-14 opacity-10 rotate-12 w-64 -z-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="special.iconPath" color="white"/></svg>
         
                             <div class="mb-4">
-                                <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="kelas.iconPath" color="white"/></svg>
+                                <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="special.iconPath" color="white"/></svg>
                             </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">{{ kelas.nama }}</h1>
+                            <a href="/fullstack" class="text-xl font-semibold text-white tracking-wide mb-1">{{ special.name }}</a>
 
                             <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">{{ kelas.tanggal }}</p>
+                                <p class="border-r text-white pr-2">Jadwal Kelas</p>
+                                <p class="text-white">{{ special.date }}</p>
                             </div>
 
                             <div class="flex items-center gap-x-5 mt-5 z-50">
                                 <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Rp. {{ kelas.harga }}</p>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-300 font-extrabold text-base"><s>{{ special.price }}</s></p>
+                                    <p class="text-white font-extrabold text-xl">{{ special.discount }}</p>
+                                </div>
                             </div>
         
                         </div>
@@ -84,11 +111,11 @@ export default {
                 </div>
     
                 <div class="">
-                    <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Kelas Umum</h1>
+                    <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Kelas Khusus <span class="border border-gray-300 px-2 rounded-full">3</span></h1>
 
                     <div class="flex gap-10 justify-center mt-10 flex-wrap">
 
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-700 hover:-translate-y-2 duration-300 z-50">
+                        <div v-for="(general, index) in classGeneral" :key="index" class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-700 hover:-translate-y-2 duration-300 z-50">
         
                             <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
         
@@ -97,177 +124,20 @@ export default {
                             </div>
                             
                             <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
+                                <img class="rounded-lg object-cover w-full h-56 z-50" :src="general.img" alt="">
                             </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">Flutter Mobile Apps</h1>
+                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">{{ general.name }}</h1>
                             <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
+                                <p class="border-r text-white pr-2">Jadwal Kelas</p>
+                                <p class="text-white">{{ general.date }}</p>
                             </div>
         
                             <div class="flex items-center gap-x-5 mt-5 z-50">
                                 <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Free</p>
-                            </div>
-        
-                        </div>
-                        
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">Fullstack Web Development</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Rp. 699.000</p>
-                            </div>
-        
-                        </div>
-
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">UI/UX Design Mobile App</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Rp. 649.000</p>
-                            </div>
-        
-                        </div>
-
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">3D Architectural Rendering Class</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Rp. 899.000</p>
-                            </div>
-        
-                        </div>
-
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">SketchUp 3D Modelling</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Rp. 499.000</p>
-                            </div>
-        
-                        </div>
-
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">3D Model Product & Photoshoot</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Rp. 500.000</p>
-                            </div>
-        
-                        </div>
-
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">Speaking English</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Rp. 349.000</p>
-                            </div>
-        
-                        </div>
-
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">SketchUp: Basic Modelling</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Free</p>
-                            </div>
-        
-                        </div>
-
-                        <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-        
-                            <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                            
-                            <div class="mb-5">
-                                <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                            </div>
-                            <h1 class="text-xl font-semibold text-white tracking-wide mb-1">Blender: Basic Modelling</h1>
-                            <div class="flex gap-x-2">
-                                <p class="border-r text-white pr-2">Kelas Offline</p>
-                                <p class="text-white">9 November 2024</p>
-                            </div>
-        
-                            <div class="flex items-center gap-x-5 mt-5 z-50">
-                                <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                                <p class="text-white font-extrabold text-xl">Free</p>
+                                <div class="flex flex-col">
+                                    <p class="text-gray-300 font-extrabold text-base"><s>{{ general.price }}</s></p>
+                                    <p class="text-white font-extrabold text-xl">{{ general.discount }}</p>
+                                </div>
                             </div>
         
                         </div>
@@ -276,6 +146,10 @@ export default {
                 </div>
             </div>
         </section>
+
+        <CtaHome></CtaHome>
+
+        <Footer></Footer>
         
     </div>    
 </template>

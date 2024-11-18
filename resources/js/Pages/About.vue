@@ -23,7 +23,7 @@ import Footer from '@/Components/Footer.vue';
                 <div class="z-50 py-10">
                     <h3 class="font-semibold text-center text-xl text-blue-500">Tentang Kami</h3>
                     <h1 class="mx-auto z-50 text-center leading-tight tracking-wide text-2xl font-extrabold my-5 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent sm:text-5xl">.   .   .Rupa Raya Academy.   .   .</h1>
-                    <p class="max-w-4xl mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm">Tempat Kursus Offline & Online yang menawarkan pengebangan skill di Berbagai Bidang. Mulai dari bidang 3D Arsitektur Desain, 3D Modelling, Bahasa Asing, Web Developer dan masih banyak lagi.</p>
+                    <p class="max-w-4xl mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm">Tempat Kursus yang menawarkan pengebangan skill di Berbagai Bidang. Mulai dari bidang 3D Arsitektur Desain, 3D Modelling, Bahasa Asing, Web Developer dan masih banyak lagi.</p>
                     <Videos></Videos>
                 </div>
             </div>

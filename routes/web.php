@@ -6,6 +6,7 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FullstackController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -22,6 +23,10 @@ Route::prefix('/about')->group(function () {
 
 Route::prefix('/listing')->group(function () {
     Route::get('/', [ListingController::class, 'index'])->name('listing.index');
+});
+
+Route::prefix('/fullstack')->group(function () {
+    Route::get('/', [FullstackController::class, 'index'])->name('fullstack.index');
 });
 
 Route::get('/dashboard', function () {
