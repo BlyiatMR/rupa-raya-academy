@@ -12,4 +12,8 @@ class Course extends Model
 
     protected $guarded = [];
 
+    public function mentor() {
+        return $this->belongsTo(Mentor::class);
+    }
+
 }

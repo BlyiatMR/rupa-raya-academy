@@ -1,6 +1,23 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, useForm, usePage} from '@inertiajs/vue3';
+
+const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+const page = usePage()
+const form = useForm({
+    title: page.props.course.title,
+    type: page.props.course.type,
+    start_date: page.props.course.start_date,
+    price: page.props.course.price,
+    description: page.props.course.description,
+});
+const submit = () => {
+    try {
+        form.post(route('course.update', page.props.course.id))
+    } catch (error) {
+        console.error(error)
+    }
+}
 </script>
 
 <template>
@@ -20,24 +37,38 @@ import { Head } from '@inertiajs/vue3';
                     class="overflow-hidden bg-white shadow-sm sm:rounded-lg"
                 >
                     <div class="p-6 text-gray-900">
-                        This is course index 
-                        <br>
-                        <br>
-                        <a href="/class/create">create</a><br>
+                        <h3 class="text-3xl mb-3">
+                            <b>Edit Kelas</b>
+                        </h3>
                         
 
-                        <form class="bg-red-200 mt-2 p-4">
-                            <input type="text" :value="$page.props.course.title">
-                            <br><br>
-                            <input type="text" :value="$page.props.course.type">
-                            <br><br>
-                            <input type="text" :value="$page.props.course.start_date">
-                            <br><br>
-                            <input type="text" :value="$page.props.course.price">
-                            <br><br>
-                            <input type="text" :value="$page.props.course.description">
-                            <br><br>
-                            <button class="bg-gray-300 p-3">Done</button>
+                        <form @submit.prevent="submit" class="bg-red-200 mt-2 p-4">
+                            <div class="mb-4">
+                                <label for="title">title</label>
+                                <input class="w-full" name="title" id="title" type="text" v-model="form.title">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="type">type</label>
+                                <input class="w-full" name="type" id="type" type="text" v-model="form.type">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="start_date">start_date</label>
+                                <input class="w-full" name="start_date" id="start_date" type="text" v-model="form.start_date">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="price">price</label>
+                                <input class="w-full" name="price" id="price" type="text" v-model="form.price">
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="description">description</label>
+                                <textarea class="w-full" rows="10" name="description" id="description" v-model="form.description">{{$page.props.course.description}}</textarea>
+                            </div>
+
+                            <button class="py-1 px-3 bg-gray-200 rounded">Done</button>
                         </form>
 
                     </div>

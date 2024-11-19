@@ -20,18 +20,20 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('/class')->group(function () {
-    Route::get('/', [CourseController::class, 'index'])->name('profile.index');
+    Route::get('/', [CourseController::class, 'index'])->name('course.index');
+    
+    Route::get('/detail/{slug}', [CourseController::class, 'show'])->name('course.detail');
 
     // create
-    Route::get('/create', [CourseController::class, 'create'])->name('profile.create');
-    Route::post('/', [CourseController::class, 'create'])->name('profile.create');
+    Route::get('/create', [CourseController::class, 'create'])->name('course.create');
+    Route::post('/', [CourseController::class, 'store'])->name('course.store');
 
     // edit
-    Route::get('/edit/{id}', [CourseController::class, 'edit'])->name('profile.edit');
-    Route::patch('/update', [CourseController::class, 'update'])->name('profile.update');
+    Route::get('/edit/{id}', [CourseController::class, 'edit'])->name('course.edit');
+    Route::post('/{id}', [CourseController::class, 'update'])->name('course.update');
 
     // delete
-    Route::delete('/delete/{id}', [CourseController::class, 'destroy'])->name('profile.delete');
+    Route::get('/delete/{id}', [CourseController::class, 'destroy'])->name('course.delete');
 
     // return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
