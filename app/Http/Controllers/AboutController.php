@@ -10,6 +10,6 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return Inertia::render('About');
+        return Inertia::render('AboutView');
     }
 }

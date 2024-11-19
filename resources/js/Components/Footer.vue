@@ -1,7 +1,7 @@
 <template>
     <footer class="border-t border-t-gray-700 backdrop-blur-xl">
         <div class="max-w-[1440px] sm:mx-auto mx-5 pt-10 pb-5">
-            <div class="text-white flex justify-center gap-5 max-[320px]:flex-col max-[320px]:text-center max-[375px]:flex-col max-[375px]:text-center mb-5">
+            <div class="text-white flex flex-wrap justify-center gap-5 mb-5">
                 <a href="#" class="text-gray-300">Beranda</a>
                 <a href="#" class="text-gray-300">Kelas/Kursus</a>
                 <a href="#" class="text-gray-300">Tentang Kami</a>

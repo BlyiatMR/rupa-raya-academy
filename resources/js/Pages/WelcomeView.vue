@@ -39,27 +39,27 @@ function handleImageError() {
 </style>
 <template>
     <Head title="Welcome" />
-    <div class="font-['Urbanist'] relative overflow-x-hidden bg-[#0F0F0F] z-50">
+    <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
 
         <div class="absolute -top-72 -left-72 blur-[80px] opacity-10 w-[50rem] h-[50rem] bg-blue-500 rounded-full -z-50"></div>
 
-        <Navbar></Navbar>
+        <Navbar />
 
-        <HeroSection></HeroSection>
+        <HeroSection />
 
         <!-- <Videos></Videos> -->
 
-        <WhyChooseMe></WhyChooseMe>
+        <WhyChooseMe />
         
-        <ClassNew></ClassNew>
+        <ClassNew />
 
-        <Testimonial></Testimonial>
+        <Testimonial />
 
-        <Qna></Qna>
+        <Qna />
 
-        <CtaHome></CtaHome>
+        <CtaHome />
 
-        <Footer></Footer>
+        <Footer />
         
     </div>
 </template>
