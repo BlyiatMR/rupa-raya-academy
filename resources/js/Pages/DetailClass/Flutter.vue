@@ -41,8 +41,8 @@ const activeSection = ref('penjelasan');
 
                     <div class="absolute left-[33%] blur-[120px] opacity-30 w-[30rem] h-[30rem] bg-blue-600 rounded-full -z-50"></div>
 
-                    <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Fullstack Web Development</h1>
-                    <p class="w-fit mx-auto flex gap-3 items-center text-gray-300 font-bold text-lg mt-5 border border-gray-300 py-2 px-5 rounded-3xl">Batch 3 Dibuka</p>
+                    <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Flutter Mobile Apps Development</h1>
+                    <p class="w-fit mx-auto flex gap-3 items-center text-gray-300 font-bold text-lg mt-5 border border-gray-300 py-2 px-5 rounded-3xl">Batch 1 Dibuka</p>
                     <!-- <div class="text-white font-bold mt-5 text-3xl text-center">
                         <span>{{ countdown.days }} Hari</span> : 
                         <span>{{ countdown.hours }} Jam</span> : 
@@ -67,7 +67,7 @@ const activeSection = ref('penjelasan');
                                 'w-32 max-[360px]:w-28 max-[320px]:w-full text-center border font-semibold border-gray-300 rounded-lg py-2 px-3 hover:bg-blue-600 hover:text-white hover:border-blue-600 duration-300': activeSection !== 'jadwal'}">Jadwal</button>
                         </div>
                         <div v-if="activeSection === 'penjelasan'" class="space-y-7">
-                            <h1 class="text-3xl tracking-wide text-white font-semibold">Kelas Fullstack Web Development</h1>
+                            <h1 class="text-3xl tracking-wide text-white font-semibold">Kelas Flutter Mobile Apps Development</h1>
                             <hr class="h-px my-8 border-0 bg-gray-600">
                             <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Kuasai kemampuan membangun website modern dari backend hingga frontend dengan Laravel. Kelas ini <span class="text-white font-bold">Dirancang Untuk Pemula Maupun Profesional yang Ingin Meningkatkan Skill</span> dengan studi kasus nyata dan bimbingan mentor berpengalaman.</p>
                             <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Belajar lebih mudah <span class="text-white font-bold">dengan Materi yang Terstruktur, Praktik Langsung, dan Fokus Pada Kebutuhan Industri.</span> Mulai dari autentikasi pengguna, integrasi API, hingga deploy aplikasi, semua dipandu langkah demi langkah. Daftar sekarang dan jadilah developer yang siap bersaing di dunia kerja</p>

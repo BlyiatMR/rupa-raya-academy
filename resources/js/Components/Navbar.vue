@@ -25,7 +25,7 @@
           <a href="/" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
           <a href="/listing" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
           <a href="/about" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
+          <a href="/gallery" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
         </div>
   

@@ -37,13 +37,15 @@ export default {
         {
           name: "Flutter Mobile Apps",
           date: "09 November 2024",
+          link: "/detail/flutter",
           img: "/images/bg-course.jpg",
-          price: "Rp. 1.200.000",
-          discount: "Rp. 750.000",
+          price: "Rp. 1.498.000",
+          discount: "Rp. 749.000",
         },
         {
           name: "Fullstack Web Development",
           date: "02 November 2024",
+          link: "/detail/fullstack",
           img: "/images/bg-fullstack.jpg",
           price: "Rp. 1.398.000",
           discount: "Rp. 699.000",
@@ -52,8 +54,8 @@ export default {
           name: "UI/UX Design Mobile App",
           date: "02 September 2024",
           img: "/images/bg-uiux.jpg",
-          price: "Rp. 998.000",
-          discount: "Rp. 449.000",
+          price: "Rp. 1.298.000",
+          discount: "Rp. 649.000",
         },
       ],
     };
@@ -144,7 +146,7 @@ export default {
                 <div class="mb-5">
                   <img class="rounded-lg" :src="general.img" :alt="general.name" />
                 </div>
-                <a href="/fullstack" class="text-xl font-semibold text-white tracking-wide mb-1">{{ general.name }}</a>
+                <a :href="general.link" class="text-xl font-semibold text-white tracking-wide mb-1">{{ general.name }}</a>
 
                 <div class="flex gap-x-2">
                   <p class="border-r text-white pr-2">Jadwal Kelas</p>

@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 
-class FullstackController extends Controller
+class GalleryController extends Controller
 {
     public function index()
     {
-        return Inertia::render('DetailClass/Fullstack');
+        return Inertia::render('GalleryView');
     }
 }

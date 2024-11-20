@@ -4,9 +4,10 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\FullstackController;
 
 Route::get('/', function () {
     return Inertia::render('WelcomeView', [
@@ -25,8 +26,13 @@ Route::prefix('/listing')->group(function () {
     Route::get('/', [ListingController::class, 'index'])->name('listing.index');
 });
 
-Route::prefix('/fullstack')->group(function () {
-    Route::get('/', [FullstackController::class, 'index'])->name('fullstack.index');
+Route::prefix('/gallery')->group(function () {
+    Route::get('/', [GalleryController::class, 'index'])->name('gallery.index');
+});
+
+Route::prefix('/detail')->group(function () {
+    Route::get('/fullstack', [DetailController::class, 'fullstack'])->name('fullstack.fullstack');
+    Route::get('/flutter', [DetailController::class, 'flutter'])->name('flutter.flutter');
 });
 
 Route::get('/dashboard', function () {

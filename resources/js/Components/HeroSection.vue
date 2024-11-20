@@ -29,7 +29,7 @@ export default {
             . . .Bangun Masa Depanmu dengan Skill Terkini. . .
           </h1>
           <p
-            class="max-w-4xl mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm"
+            class="max-w-4xl text-lg mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm"
           >
             Kuasai keterampilan yang paling dicari di dunia digital dengan metode
             pembelajaran praktis, seru, dan langsung dari mentor berpengalaman.

@@ -7,7 +7,7 @@ import Footer from '@/Components/Footer.vue';
 </script>
 <template>
     <Head title="Welcome" />
-    <div class="font-['Urbanist'] relative overflow-x-hidden bg-[#0F0F0F]">
+    <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A]">
   
       <!-- Navbar -->
       <Navbar />
@@ -23,7 +23,7 @@ import Footer from '@/Components/Footer.vue';
             <h1 class="mx-auto z-50 text-center leading-tight tracking-wide text-2xl font-extrabold my-5 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent sm:text-5xl">
               . . . Rupa Raya Academy . . .
             </h1>
-            <p class="max-w-4xl mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm">
+            <p class="max-w-4xl text-lg mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm">
               Tempat Kursus yang menawarkan pengembangan skill di berbagai bidang. Mulai dari bidang 3D Arsitektur Desain, 
               3D Modelling, Bahasa Asing, Web Developer, dan masih banyak lagi.
             </p>
