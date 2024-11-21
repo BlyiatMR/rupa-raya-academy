@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Mentor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 use Str;
@@ -97,12 +98,10 @@ class CourseController extends Controller
 
         if ($request->mentor_name !== '') {
             $mentor = new Mentor();
+            $mentorPath = $request->file('mentor_profile_img')->store('mentor/profile-photos', 'public');
+
             $mentor->name        =   $request->mentor_name;
             $mentor->profile     =   $request->mentor_profile;
-            $mentorPath = '';
-            if ($request->hasFile('mentor_profile_img')) {
-                $mentorPath = $request->file('mentor_profile_img')->store('mentor/profile-photos', 'public');
-            }
             $mentor->job         =   $request->mentor_job;
             $mentor->profile_img =   $mentorPath;
             $mentor->fb_link     =   $request->mentor_fb;
@@ -189,7 +188,6 @@ class CourseController extends Controller
     {
         $request->validate([
             'title'                 => 'required|min:5',
-            'type'                  => 'required|min:5',
             // 'new_banner'            => 'required|mimes:jpeg,png,jpg,webp|max:10240',
             'start_date'            => 'required',
             'times_of_meeting'      => 'required',
@@ -209,20 +207,74 @@ class CourseController extends Controller
         ]);
         $course = Course::find($id);
 
+        if(isset($request->new_photos1)){
+            if(isset($course->photos1)){
+                Storage::delete($course->photos1);
+            }
+            $course->photos1 = $request->file('new_photos1')->store('course/photos', 'public');
+        } else {
+            $course->photos1 = $request->photos1;
+        }
+
+        if(isset($request->new_photos2)){
+            if(isset($course->photos2)){
+                Storage::delete($course->photos2);
+            }
+            $course->photos2 = $request->file('new_photos2')->store('course/photos', 'public');
+        } else {
+            $course->photos2 = $request->photos2;
+        }
+
+        if(isset($request->new_photos3)){
+            if(isset($course->photos3)){
+                Storage::delete($course->photos3);
+            }
+            $course->photos3 = $request->file('new_photos3')->store('course/photos', 'public');
+        } else {
+            $course->photos3 = $request->photos3;
+        }
+
+        if(isset($request->new_photos4)){
+            if(isset($course->photos4)){
+                Storage::delete($course->photos4);
+            }
+            $course->photos4 = $request->file('new_photos4')->store('course/photos', 'public');
+        } else {
+            $course->photos4 = $request->photos4;
+        }
+
+        if(isset($request->new_schedule_img)){
+            if(isset($course->photos4)){
+                Storage::delete($course->photos4);
+            }
+            $course->schedule_img = $request->file('new_schedule_img')->store('course/schedule', 'public');
+        } else {
+            $course->schedule_img = $request->photos4;
+        }
+
+        if(isset($request->new_banner)){
+            if(isset($course->banner)){
+                Storage::delete($course->banner);
+            }
+            $course->banner = $request->file('new_banner')->store('course/banner', 'public');
+        } else {
+            $course->banner = $request->banner;
+        }
+
         $course->title                  =   $request->title;
 
         $course->start_date             =   $request->start_date;
-        $course->start_date             =   $request->start_date;
+        $course->end_date               =   $request->start_date;
         $course->times_of_meeting       =   $request->times_of_meeting;
         $course->duration_of_meeting    =   $request->duration_of_meeting;
         $course->price                  =   $request->price;
         $course->last_price             =   $request->last_price;
+
         $course->tools                  =   $request->tools;
         $course->location               =   $request->location;
         $course->facility               =   $request->facility;
         $course->benefit                =   $request->benefit;
-        $course->slug                   =   Str::slug($request->title).'-'.Str::random(6);
-        $course->price                  =   $request->price;
+        $course->registration_link      =   $request->registration_link;
         $course->description            =   $request->description;
 
         if ($request->new_banner !== null) {
@@ -232,29 +284,34 @@ class CourseController extends Controller
             $course->banner_img             = $request->banner;
         }
 
+        // Jika user membuat mentor baru
         if ($request->new_mentor_name !== null && $request->new_mentor_profile !== null && $request->new_mentor_job !== null) {
             $mentor = new Mentor();
+            if(isset($mentor->profile_img)){
+                Storage::delete($mentor->profile_img);
+            }
+            $mentorFile = $request->file('photos4')->store('course/photos', 'public');
             $mentor->name                   =   $request->new_mentor_name;
             $mentor->profile                =   $request->new_mentor_profile;
             $mentor->job                    =   $request->new_mentor_job;
-            $mentor->profile_img =   $request->new_mentor_job;
-            $mentor->fb_link     =   $request->new_mentor_job;
-            $mentor->ig_link     =   $request->new_mentor_job;
-            $mentor->twt_link    =   $request->new_mentor_job;
+            $mentor->profile_img            =   $mentorFile;
+            $mentor->fb_link                =   $request->new_mentor_fb;
+            $mentor->ig_link                =   $request->new_mentor_ig;
+            $mentor->twt_link               =   $request->new_mentor_twt;
             $mentor->save();
             $request->merge(['mentor_id' => $mentor->id]);
-            $course->mentor_id              =   $mentor->id; // ini udah aman
-        } else {
-            $course->mentor_id              =   $request->mentor_id; // ini udah aman
-            $mentor = Mentor::find($request->mentor_id); // ini udah aman
+            $course->mentor_id              =   $mentor->id;
+        } else { // Jika user tidak membuat mentor baru maka akan memasukkan request lama
+            $course->mentor_id              =   $request->mentor_id;
+            $mentor = Mentor::find($request->mentor_id);
             if ($mentor->id != $course->mentor_id) { // ini jika mentor_id di course tidak sama dengan mentor_id di request
                 $mentor->name                   =   $request->mentor_name;
                 $mentor->profile                =   $request->mentor_profile;
                 $mentor->job                    =   $request->mentor_job;
-                $mentor->profile_img =   $request->mentor_job;
-                $mentor->fb_link     =   $request->mentor_job;
-                $mentor->ig_link     =   $request->mentor_job;
-                $mentor->twt_link    =   $request->mentor_job;
+                $mentor->profile_img            =   $request->mentor_profile_img;
+                $mentor->fb_link                =   $request->mentor_fb_link;
+                $mentor->ig_link                =   $request->mentor_ig_link;
+                $mentor->twt_link               =   $request->mentor_twt_link;
                 $mentor->save();
             }
         }

@@ -89,6 +89,45 @@ const submit = () => {
     });
 }
 
+const scheduleFile = (event) => {
+    if (event.target.files.length > 0) {
+        form.new_schedule_img = event.target.files[0];
+        console.log(event.target.files[0]);
+    }
+};
+
+const photos1File = (event) => {
+    if (event.target.files.length > 0) {
+        form.new_photos1 = event.target.files[0];
+        console.log(event.target.files[0]);
+    }
+};
+const photos2File = (event) => {
+    if (event.target.files.length > 0) {
+        form.new_photos2 = event.target.files[0];
+        console.log(event.target.files[0]);
+    }
+};
+const photos3File = (event) => {
+    if (event.target.files.length > 0) {
+        form.new_photos3 = event.target.files[0];
+        console.log(event.target.files[0]);
+    }
+};
+const photos4File = (event) => {
+    if (event.target.files.length > 0) {
+        form.new_photos4 = event.target.files[0];
+        console.log(event.target.files[0]);
+    }
+};
+
+const mentorFile = (event) => {
+    if (event.target.files.length > 0) {
+        form.new_mentor_profile_img = event.target.files[0];
+        console.log(event.target.files[0]);
+    }
+};
+
 const handleFileChange = (event) => {
     if (event.target.files.length > 0) {
         form.new_banner = event.target.files[0];
@@ -187,6 +226,10 @@ input:disabled {
 
                             <div class="col-span-2">
                                 <label for="schedule_img">Gambar Jadwal Pertemuan *</label>
+                                <div class="border border-black p-2 mb-2 w-fit">
+                                    <small>Gambar saat ini</small>
+                                    <img :src="'/storage/' + form.schedule_img" alt="" class="h-44">
+                                </div>
                                 <input class="w-full border-0 rounded-md ring-gray-300" name="schedule_img" id="schedule_img" type="file" @change="scheduleFile">
                                 <span class="text-red-500 text-xs">{{ form.errors.schedule_img }}</span>
                             </div>
@@ -243,38 +286,38 @@ input:disabled {
 
                         <div class="mb-6 sm:grid grid-cols-2 items-end gap-x-3 border-b-2 pb-4">
                             <div class="mb-4">
+                                <label for="photos1">Upload Suasana Kelas 1 *</label>
                                 <div class="border border-black p-2 mb-2 w-fit">
-                                    <small>banner saat ini</small>
+                                    <small>Gambar saat ini</small>
                                     <img :src="'/storage/'+form.photos1" alt="" class="h-44">
                                 </div>
-                                <label for="photos1">Upload Suasana Kelas 1 *</label>
                                 <input class="w-full border-0 rounded-md ring-gray-300" name="photos1" id="photos1" type="file" @change="photos1File">
                                 <span class="text-red-500 text-xs">{{ form.errors.photos1 }}</span>
                             </div>
                             <div class="mb-4">
+                                <label for="photos2">Upload Suasana Kelas 2 *</label>
                                 <div class="border border-black p-2 mb-2 w-fit">
-                                    <small>banner saat ini</small>
+                                    <small>Gambar saat ini</small>
                                     <img :src="'/storage/'+form.photos2" alt="" class="h-44">
                                 </div>
-                                <label for="photos2">Upload Suasana Kelas 2 *</label>
                                 <input class="w-full border-0 rounded-md ring-gray-300" name="photos2" id="photos2" type="file" @change="photos2File">
                                 <span class="text-red-500 text-xs">{{ form.errors.photos2 }}</span>
                             </div>
                             <div class="mb-4">
+                                <label for="photos3">Upload Suasana Kelas 3 *</label>
                                 <div class="border border-black p-2 mb-2 w-fit">
-                                    <small>banner saat ini</small>
+                                    <small>Gambar saat ini</small>
                                     <img :src="'/storage/'+form.photos3" alt="" class="h-44">
                                 </div>
-                                <label for="photos3">Upload Suasana Kelas 3 *</label>
                                 <input class="w-full border-0 rounded-md ring-gray-300" name="photos3" id="photos3" type="file" @change="photos3File">
                                 <span class="text-red-500 text-xs">{{ form.errors.photos3 }}</span>
                             </div>
                             <div class="mb-4">
+                                <label for="photos4">Upload Suasana Kelas 4 *</label>
                                 <div class="border border-black p-2 mb-2 w-fit">
-                                    <small>banner saat ini</small>
+                                    <small>Gambar saat ini</small>
                                     <img :src="'/storage/'+form.photos4" alt="" class="h-44">
                                 </div>
-                                <label for="photos4">Upload Suasana Kelas 4 *</label>
                                 <input class="w-full border-0 rounded-md ring-gray-300" name="photos4" id="photos4" type="file" @change="photos4File">
                                 <span class="text-red-500 text-xs">{{ form.errors.photos4 }}</span>
                             </div>
@@ -310,12 +353,13 @@ input:disabled {
                         <span @click="editMentorTrue()" class="py-1 px-3 bg-gray-300 hover:bg-gray-400 duration-100 rounded mr-2 cursor-pointer">Edit mentor saat ini</span>
                         <span @click="createMentorTrue()" class="py-1 px-3 bg-gray-300 hover:bg-gray-400 duration-100 rounded cursor-pointer">Buat mentor baru</span>
 
+                        <!-- EDIT MENTOR -->
                         <div v-if="editMentor" class="py-2 mt-4">
                             <h3 class="text-2xl">Edit Mentor Yang Dipilih Sebelumnya</h3>
                             <small>ini akan dihiraukan jika anda mengganti mentor pada selection diatas</small>
                             <div class="mb-4">
                                 <label for="mentor_name">Nama Mentor</label>
-                                <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_name" name="mentor_name" id="mentor_name" type="text" :disabled="!editMentor">
+                                <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_name" name="mentor_name" id="mentor_name" type="text">
                                 <span class="text-red-500 text-xs">{{ form.errors.mentor_name }}</span>
                             </div>
 
@@ -326,51 +370,57 @@ input:disabled {
                                                 :toolbar="[['bold', 'italic'], [{ 'header': 1 }], [{ 'list': 'ordered'}, { 'list': 'bullet' }]]"
                                                 v-model:content="form.mentor_profile"
                                                 style="height: 220px;"
-                                                contentType="html" name="mentor_profile" id="mentor_profile" />                                <span class="text-red-500 text-xs">{{ form.errors.mentor_profile }}</span>
+                                                contentType="html" name="mentor_profile" id="mentor_profile" />
                                 <span class="text-red-500 text-xs">{{ form.errors.mentor_profile }}</span>
                             </div>
 
                         <div class="mb-4">
                             <label for="mentor_profile_img">Upload Foto Mentor</label>
+                                <div class="border border-black p-2 mb-2 w-fit">
+                                    <small>Gambar saat ini</small>
+                                    <img :src="'/storage/' + form.mentor_profile_img" alt="" class="h-44">
+                                </div>
                             <input class="w-full border-0 rounded-md ring-gray-300" name="mentor_profile_img" id="mentor_profile_img" type="file" @change="mentorFile">
                             <span class="text-red-500 text-xs">{{ form.errors.mentor_profile_img }}</span>
                         </div>
 
                             <div class="mb-8">
                                 <label for="mentor_job">Pekerjaan Mentor</label>
-                                <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_job" name="mentor_job" id="mentor_job" type="text" :disabled="!editMentor">
+                                <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_job" name="mentor_job" id="mentor_job" type="text">
                                 <span class="text-red-500 text-xs">{{ form.errors.mentor_job }}</span>
                             </div>
 
                             <div class="grid grid-cols-3 gap-3">
                                 <div class="mb-8">
                                     <label for="mentor_fb">Link Facebook Mentor</label>
-                                    <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_fb" name="mentor_fb" id="mentor_fb" type="text" :disabled="form.mentor_id != ''">
+                                    <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_fb" name="mentor_fb" id="mentor_fb" type="text">
                                     <span class="text-red-500 text-xs">{{ form.errors.mentor_fb }}</span>
                                 </div>
                                 <div class="mb-8">
                                     <label for="mentor_ig">Link Instagram Mentor</label>
-                                    <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_ig" name="mentor_ig" id="mentor_ig" type="text" :disabled="form.mentor_id != ''">
+                                    <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_ig" name="mentor_ig" id="mentor_ig" type="text">
                                     <span class="text-red-500 text-xs">{{ form.errors.mentor_ig }}</span>
                                 </div>
                                 <div class="mb-8">
                                     <label for="mentor_twt">Link Twitter Mentor</label>
-                                    <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_twt" name="mentor_twt" id="mentor_twt" type="text" :disabled="form.mentor_id != ''">
+                                    <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.mentor_twt" name="mentor_twt" id="mentor_twt" type="text">
                                     <span class="text-red-500 text-xs">{{ form.errors.mentor_twt }}</span>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- CREATE MENTOR -->
+
                         <div v-if="createMentor" class="py-2 mt-4">
                             <h3 class="text-2xl">Buat Mentor Baru</h3>
                             <div class="mb-4">
-                                <label for="new_mentor_name">Nama Mentor </label>{{form.new_mentor_name}}
+                                <label for="new_mentor_name">Nama Mentor </label>
                                 <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.new_mentor_name" name="new_mentor_name" id="new_mentor_name" type="text">
                                 <span class="text-red-500 text-xs">{{ form.errors.new_mentor_name }}</span>
                             </div>
 
                             <div class="mb-4">
-                                <label for="new_mentor_profile">Profil Mentor </label>{{ form.new_mentor_profile }}
+                                <label for="new_mentor_profile">Profil Mentor </label>
                                 <!--<textarea class="w-full border-0 rounded-md ring-gray-300" rows="10" v-model="form.new_mentor_profile" name="new_mentor_profile" id="new_mentor_profile" :disabled="form.mentor_id != ''"></textarea>-->
                                 <QuillEditor theme="snow"
                                                 :toolbar="[['bold', 'italic'], [{ 'header': 1 }], [{ 'list': 'ordered'}, { 'list': 'bullet' }]]"
@@ -387,7 +437,7 @@ input:disabled {
                         </div>
 
                             <div class="mb-8">
-                                <label for="mentor_job">Pekerjaan Mentor </label>{{ form.new_mentor_job }}
+                                <label for="mentor_job">Pekerjaan Mentor </label>
                                 <input class="w-full border-0 rounded-md ring-gray-300" v-model="form.new_mentor_job" name="mentor_job" id="mentor_job" type="text">
                                 <span class="text-red-500 text-xs">{{ form.errors.new_mentor_job }}</span>
                             </div>
