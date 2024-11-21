@@ -13,30 +13,35 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('courses', function (Blueprint $table) {
-            
+
             $table->id();
             $table->string('title');                        // Title
-            $table->string('banner_img');                   // Banner Image 
-            $table->string('type');                         // Online or Offline
+            $table->string('banner_img');                   // Banner Image
+
             $table->date('start_date');                     // Start Date
-            $table->integer('times_of_meeting');            // Start Date
-            $table->integer('duration_of_meeting');         // Start Date
+            $table->date('end_date');                       // End Date
+            $table->integer('times_of_meeting');            // Berapa kali pertemuan
+            $table->integer('duration_of_meeting');         // Durasi pertemuan
+            $table->string('schedule_img');                 // Jadwal dalam bentuk gambar
+            $table->string('registration_link');            // Jadwal dalam bentuk gambar
+
             $table->string('slug');                         // Slug
+
             $table->string('price')->nullable();            // Price
             $table->string('last_price')->nullable();       // Discount // seperti 20% 10% etc...
             $table->string('tools')->nullable();            // Tools
             $table->string('location');                     // Lokasi menggunakan google maps
             $table->string('facility');                     // Fasilitas seperti komputer, laptop, etc...
-            $table->string('benefit');                      // Lokasi menggunakan google maps
-            $table->string('suitable_person')->nullable();  // Orang yang cocok untuk class ini
+            $table->string('benefit');                      // Benefit yang didapatkan
+
+            $table->string('photos1')->nullable();          // Foto suasana
+            $table->string('photos2')->nullable();
+            $table->string('photos3')->nullable();
+            $table->string('photos4')->nullable();
+
             $table->text('description');                    // Description
-            
+
             $table->foreignIdFor(Mentor::class);              // Id milik mentor
-
-            // $table->string('mentor_name'); // Lokasi menggunakan google maps
-            // $table->string('mentor_profile'); // Lokasi menggunakan google maps
-            // $table->string('mentor_job'); // Lokasi menggunakan google maps
-
 
             $table->timestamps();
         });

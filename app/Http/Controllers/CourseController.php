@@ -40,18 +40,18 @@ class CourseController extends Controller
     {
         $request->validate([
             'title'                 => 'required|min:5',
-            'type'                  => 'required|min:5',
+
             'banner'                => 'required|mimes:jpeg,png,jpg,webp|max:10240',
+            'schedule_img'          => 'required|mimes:jpeg,png,jpg,webp|max:10240',
+            'photos1'               => 'nullable|mimes:jpeg,png,jpg,webp|max:10240',
+            'photos2'               => 'nullable|mimes:jpeg,png,jpg,webp|max:10240',
+            'photos3'               => 'nullable|mimes:jpeg,png,jpg,webp|max:10240',
+            'photos4'               => 'nullable|mimes:jpeg,png,jpg,webp|max:10240',
+
+
             'start_date'            => 'required',
             'times_of_meeting'      => 'required',
             'duration_of_meeting'   => 'required',
-            'price'                 => 'nullable',
-            'last_price'            => 'nullable',
-            'tools'                 => 'nullable',
-            'location'              => 'nullable',
-            'facility'              => 'nullable',
-            'benefit'               => 'nullable',
-            'suitable_person'       => 'nullable',
             'description'           => 'required|min:5',
 
             'mentor_id'             =>   'nullable|exists:mentors,id',
@@ -64,41 +64,83 @@ class CourseController extends Controller
             'mentor_job'            => Rule::requiredIf(function() use ($request){
                 return !$request->has('mentor_id');
             }),
+            'mentor_profile_img'    => Rule::requiredIf(function() use ($request){
+                return !$request->has('mentor_id');
+            }),
         ]);
 
 
         // Saving To Database
-
         $bannerPath = $request->file('banner')->store('course/banner', 'public');
+        $schedulePath = $request->file('schedule_img')->store('course/schedule', 'public');
 
-        if (!$request->has('mentor_id')) {
+        // Photos
+        $photos1path = '';
+        if ($request->hasFile('photos1')) {
+            $photos1path = $request->file('photos1')->store('course/photos', 'public');
+        }
+        $photos2path = '';
+        if ($request->hasFile('photos2')) {
+            $photos2path = $request->file('photos2')->store('course/photos', 'public');
+        }
+        $photos3path = '';
+        if ($request->hasFile('photos3')) {
+            $photos3path = $request->file('photos3')->store('course/photos', 'public');
+        }
+        $photos4path = '';
+        if ($request->hasFile('photos4')) {
+            $photos4path = $request->file('photos4')->store('course/photos', 'public');
+        }
+
+
+        $course = new Course();
+
+        if ($request->mentor_name !== '') {
             $mentor = new Mentor();
             $mentor->name        =   $request->mentor_name;
             $mentor->profile     =   $request->mentor_profile;
+            $mentorPath = '';
+            if ($request->hasFile('mentor_profile_img')) {
+                $mentorPath = $request->file('mentor_profile_img')->store('mentor/profile-photos', 'public');
+            }
             $mentor->job         =   $request->mentor_job;
+            $mentor->profile_img =   $mentorPath;
+            $mentor->fb_link     =   $request->mentor_fb;
+            $mentor->ig_link     =   $request->mentor_ig;
+            $mentor->twt_link    =   $request->mentor_twt;
             $mentor->save();
             $request->merge(['mentor_id' => $mentor->id]);
         }
 
-        $course = new Course();
         $course->title                  =   $request->title;
-        $course->type                   =   $request->type;
+
         $course->banner_img             =   $bannerPath;
+
         $course->start_date             =   $request->start_date;
-        $course->start_date             =   $request->start_date;
+        $course->end_date               =   $request->start_date;
         $course->times_of_meeting       =   $request->times_of_meeting;
         $course->duration_of_meeting    =   $request->duration_of_meeting;
+        $course->schedule_img           =   $schedulePath;
+
         $course->price                  =   $request->price;
         $course->last_price             =   $request->last_price;
+
         $course->tools                  =   $request->tools;
         $course->location               =   $request->location;
         $course->facility               =   $request->facility;
         $course->benefit                =   $request->benefit;
-        $course->suitable_person        =   $request->suitable_person;
-        $course->slug                   =   Str::slug($request->title).'-'.Str::random(6);
-        $course->price                  =   $request->price;
-        $course->description            =   $request->description;
+        $course->registration_link      =   $request->registration_link;
+
+        $course->photos1                =   $photos1path;
+        $course->photos2                =   $photos2path;
+        $course->photos3                =   $photos3path;
+        $course->photos4                =   $photos4path;
+
         $course->mentor_id              =   $request->mentor_id;
+
+        $course->slug                   =   Str::slug($request->title).'-'.Str::random(6);
+
+        $course->description            =   $request->description;
 
         $course->save();
 
@@ -132,9 +174,11 @@ class CourseController extends Controller
      */
     public function edit(string $id)
     {
-        $course = Course::find($id);
+        $course = Course::find($id)->with('mentor')->first();
+        $mentors = Mentor::all();
         return Inertia::render('Admin/Course/Edit', [
-            'course' => $course
+            'course' => $course,
+            'mentors' => $mentors
         ]);
     }
 
@@ -144,20 +188,77 @@ class CourseController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'title' => ['required', 'min:5'],
-            'type' => ['required', 'min:5'],
-            'start_date' => ['required'],
-            'price' => ['required'],
-            'description' => ['required', 'min:5'],
-        ]);
+            'title'                 => 'required|min:5',
+            'type'                  => 'required|min:5',
+            // 'new_banner'            => 'required|mimes:jpeg,png,jpg,webp|max:10240',
+            'start_date'            => 'required',
+            'times_of_meeting'      => 'required',
+            'duration_of_meeting'   => 'required',
+            'description'           => 'required|min:5',
 
-        Course::whereId($id)->update([
-            'title' => $request->title,
-            'type' => $request->type,
-            'start_date' => $request->start_date,
-            'price' => $request->price,
-            'description' => $request->description,
+            'mentor_id'             => 'nullable|exists:mentors,id',
+            'new_mentor_name'           => Rule::requiredIf(function() use ($request){
+                return !$request->has('mentor_id');
+            }),
+            'new_mentor_profile'        => Rule::requiredIf(function() use ($request){
+                return !$request->has('mentor_id');
+            }),
+            'new_mentor_job'            => Rule::requiredIf(function() use ($request){
+                return !$request->has('mentor_id');
+            }),
         ]);
+        $course = Course::find($id);
+
+        $course->title                  =   $request->title;
+
+        $course->start_date             =   $request->start_date;
+        $course->start_date             =   $request->start_date;
+        $course->times_of_meeting       =   $request->times_of_meeting;
+        $course->duration_of_meeting    =   $request->duration_of_meeting;
+        $course->price                  =   $request->price;
+        $course->last_price             =   $request->last_price;
+        $course->tools                  =   $request->tools;
+        $course->location               =   $request->location;
+        $course->facility               =   $request->facility;
+        $course->benefit                =   $request->benefit;
+        $course->slug                   =   Str::slug($request->title).'-'.Str::random(6);
+        $course->price                  =   $request->price;
+        $course->description            =   $request->description;
+
+        if ($request->new_banner !== null) {
+            $bannerPath = $request->file('new_banner')->store('course/banner', 'public');
+            $course->banner_img             = $bannerPath;
+        } else {
+            $course->banner_img             = $request->banner;
+        }
+
+        if ($request->new_mentor_name !== null && $request->new_mentor_profile !== null && $request->new_mentor_job !== null) {
+            $mentor = new Mentor();
+            $mentor->name                   =   $request->new_mentor_name;
+            $mentor->profile                =   $request->new_mentor_profile;
+            $mentor->job                    =   $request->new_mentor_job;
+            $mentor->profile_img =   $request->new_mentor_job;
+            $mentor->fb_link     =   $request->new_mentor_job;
+            $mentor->ig_link     =   $request->new_mentor_job;
+            $mentor->twt_link    =   $request->new_mentor_job;
+            $mentor->save();
+            $request->merge(['mentor_id' => $mentor->id]);
+            $course->mentor_id              =   $mentor->id; // ini udah aman
+        } else {
+            $course->mentor_id              =   $request->mentor_id; // ini udah aman
+            $mentor = Mentor::find($request->mentor_id); // ini udah aman
+            if ($mentor->id != $course->mentor_id) { // ini jika mentor_id di course tidak sama dengan mentor_id di request
+                $mentor->name                   =   $request->mentor_name;
+                $mentor->profile                =   $request->mentor_profile;
+                $mentor->job                    =   $request->mentor_job;
+                $mentor->profile_img =   $request->mentor_job;
+                $mentor->fb_link     =   $request->mentor_job;
+                $mentor->ig_link     =   $request->mentor_job;
+                $mentor->twt_link    =   $request->mentor_job;
+                $mentor->save();
+            }
+        }
+        $course->save();
         return redirect()->route('course.index')->with('success','Sukses, anda telah mengubah data');
     }
 

@@ -40,7 +40,7 @@ import { Head } from '@inertiajs/vue3';
                             <a class="py-1 px-3 bg-gray-300 rounded" href="/class/create">Buat kelas</a>
                         </p>
                         
-                        <div class="flex">
+                        <div class="flex flex-wrap">
                             <div class="flex-[0_0_33%] p-2" v-for="(item, index) in $page.props.course" :key="index">
                                 <div class="bg-gray-300 mt-2 px-4 py-2 rounded shadow">
                                     No : {{ index + 1 }}
@@ -51,7 +51,7 @@ import { Head } from '@inertiajs/vue3';
                                     </div>
                                     <h3 class="text-xl">{{ item.title }}</h3>
                                     <p>{{ item.slug }}</p>
-                                    <p>{{ item.description }}</p>
+                                    <!-- <p>{{ item.description }}</p> -->
                                     <p>{{ item.price }}</p>
                                     <div class="space-x-2">
                                         <a class="text-blue-600 underline" :href="'/class/edit/' + item.id">edit</a>

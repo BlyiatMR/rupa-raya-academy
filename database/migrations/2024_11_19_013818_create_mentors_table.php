@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('mentors', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('profile_img');
             $table->string('profile');
             $table->string('job');
-            
+            $table->string('fb_link')->nullable();
+            $table->string('ig_link')->nullable();
+            $table->string('twt_link')->nullable();
+
             $table->timestamps();
         });
     }

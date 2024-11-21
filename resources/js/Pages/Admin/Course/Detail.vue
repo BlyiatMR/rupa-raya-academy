@@ -41,7 +41,10 @@ import { Head } from '@inertiajs/vue3';
                                 <br>
                                 <h2>Harga : <br>{{$page.props.course.price}}</h2>
                                 <br>
-                                <p>Deskripsi : <br>{{$page.props.course.description}}</p>
+                                <div>
+                                    Deskripsi : <br>
+                                    <div v-html="$page.props.course.description"></div>
+                                </div>
                                 <br>
                                 <br>
                                 <p>ID Mentor : <br>{{$page.props.course.mentor.id}}</p>
