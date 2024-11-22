@@ -3,6 +3,7 @@
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\GalleryController;
@@ -30,9 +31,14 @@ Route::prefix('/gallery')->group(function () {
     Route::get('/', [GalleryController::class, 'index'])->name('gallery.index');
 });
 
+Route::prefix('/news')->group(function () {
+    Route::get('/', [NewsController::class, 'index'])->name('news.index');
+});
+
 Route::prefix('/detail')->group(function () {
     Route::get('/fullstack', [DetailController::class, 'fullstack'])->name('fullstack.fullstack');
     Route::get('/flutter', [DetailController::class, 'flutter'])->name('flutter.flutter');
+    Route::get('/uiux', [DetailController::class, 'uiux'])->name('uiux.uiux');
 });
 
 Route::get('/dashboard', function () {

@@ -26,12 +26,13 @@
           <a href="/listing" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
           <a href="/about" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
           <a href="/gallery" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
+          <a href="/news" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
         </div>
   
         <!-- Contact Button (Always Visible) -->
         <div class="hidden lg:block text-gray-400">
-          <a href="#" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>
+          <a href="https://api.whatsapp.com/send?phone=+6289526791153&text=Halo Kak. Saya tertarik untuk mengetahui lebih lanjut tentang program di Rupa Raya Academy.
+              Bisakah saya mendapatkan informasi lengkapnya? Terima kasih!" target="_blank" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>
         </div>
   
         <!-- Mobile Menu Icon -->
@@ -50,8 +51,8 @@
           <a href="/" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
           <a href="/listing" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Kelas/Kursus</a>
           <a href="/about" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Tentang Kami</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
-          <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
+          <a href="/gallery" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
+          <a href="/news" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
           <a href="#" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>
         </div>
       </div>

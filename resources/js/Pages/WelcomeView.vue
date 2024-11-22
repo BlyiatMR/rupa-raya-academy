@@ -41,7 +41,8 @@ function handleImageError() {
     <Head title="Welcome" />
     <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
 
-        <div class="absolute -top-72 -left-72 blur-[80px] opacity-10 w-[50rem] h-[50rem] bg-blue-500 rounded-full -z-50"></div>
+        <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
+        <div class="absolute -top-52 -right-52 blur-[200px] opacity-20 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
 
         <Navbar />
 

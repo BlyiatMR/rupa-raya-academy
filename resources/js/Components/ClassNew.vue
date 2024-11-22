@@ -1,3 +1,40 @@
+<script>
+export default {
+  data() {
+    return {
+      classGeneral: [
+        {
+          name: "Flutter Mobile Apps",
+          date: "09 November 2024",
+          link: "/detail/flutter",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLSexJlmu983IOzuRT7EJrGB2wpkc7tqkV5REFz73a05nLcuALA/viewform",
+          img: "/images/bg-course.jpg",
+          price: "Rp. 1.498.000",
+          discount: "Rp. 749.000",
+        },
+        {
+          name: "Fullstack Web Development",
+          date: "02 November 2024",
+          link: "/detail/fullstack",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLScjeqPgSSOUUw6M8SmVACmREDgPg8t99sXK_G1xJaEpfoh08Q/viewform",
+          img: "/images/bg-fullstack.jpg",
+          price: "Rp. 1.398.000",
+          discount: "Rp. 699.000",
+        },
+        {
+          name: "UI/UX Design Mobile App",
+          date: "02 September 2024",
+          link: "/detail/uiux",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLSd36nibWMNiLXB5bgJcQGRnM9EL3bhDWJgeDrzuqb8g5B4gsw/viewform",
+          img: "/images/bg-uiux.jpg",
+          price: "Rp. 1.298.000",
+          discount: "Rp. 649.000",
+        },
+      ],
+    };
+  },
+};
+</script>
 <template>
     <section>
         <div class="max-w-[1440px] sm:mx-auto mx-5 sm:py-20 py-10">
@@ -7,7 +44,8 @@
             </div>
 
             <div class="flex gap-10 justify-center flex-wrap">
-                <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-700 hover:-translate-y-2 duration-300 z-50">
+                <div v-for="(general, index) in classGeneral"
+                :key="index" class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
 
                     <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
 
@@ -16,55 +54,20 @@
                     </div>
                     
                     <div class="mb-5">
-                        <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
+                        <img class="rounded-lg z-50" :src="general.img" alt="">
                     </div>
-                    <h1 class="text-xl font-semibold text-white tracking-wide mb-1">Flutter Mobile Apps</h1>
+                    <a :href="general.link" class="text-xl font-semibold text-white tracking-wide mb-1">{{ general.name }}</a>
                     <div class="flex gap-x-2">
-                        <p class="border-r text-white pr-2">Kelas Offline</p>
-                        <p class="text-white">9 November 2024</p>
+                        <p class="border-r text-white pr-2">Jadwal Kelas</p>
+                        <p class="text-white">{{ general.date }}</p>
                     </div>
 
                     <div class="flex items-center gap-x-5 mt-5 z-50">
-                        <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                        <p class="text-white font-extrabold text-xl">Free</p>
-                    </div>
-
-                </div>
-                <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-
-                    <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                    
-                    <div class="mb-5">
-                        <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                    </div>
-                    <h1 class="text-xl font-semibold text-white tracking-wide mb-1">Fullstack Web Development</h1>
-                    <div class="flex gap-x-2">
-                        <p class="border-r text-white pr-2">Kelas Offline</p>
-                        <p class="text-white">9 November 2024</p>
-                    </div>
-
-                    <div class="flex items-center gap-x-5 mt-5 z-50">
-                        <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                        <p class="text-white font-extrabold text-xl">Rp. 699.000</p>
-                    </div>
-
-                </div>
-                <div class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
-
-                    <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
-                    
-                    <div class="mb-5">
-                        <img class="rounded-lg z-50" src="/images/bg-course.jpg" alt="">
-                    </div>
-                    <h1 class="text-xl font-semibold text-white tracking-wide mb-1">UI/UX Design Mobile App</h1>
-                    <div class="flex gap-x-2">
-                        <p class="border-r text-white pr-2">Kelas Offline</p>
-                        <p class="text-white">9 November 2024</p>
-                    </div>
-
-                    <div class="flex items-center gap-x-5 mt-5 z-50">
-                        <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
-                        <p class="text-white font-extrabold text-xl">Rp. 649.000</p>
+                        <a :href="general.list" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
+                        <div class="flex flex-col">
+                            <p class="text-gray-300 font-extrabold text-base"><s>{{ general.price }}</s></p>
+                            <p class="text-white font-extrabold text-xl">{{ general.discount }}</p>
+                          </div>
                     </div>
 
                 </div>

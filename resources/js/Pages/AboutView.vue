@@ -14,7 +14,7 @@ import Footer from '@/Components/Footer.vue';
   
       <!-- Tentang Kami Section -->
       <section>
-        <div class="max-w-[1440px] relative xl:mx-auto sm:pt-40 pt-20 pb-20 mx-5 z-0">
+        <div class="max-w-[1440px] relative xl:mx-auto sm:pt-40 pt-20 mx-5 z-0">
           <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
           <div class="absolute -top-52 -right-52 blur-[200px] opacity-20 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
           

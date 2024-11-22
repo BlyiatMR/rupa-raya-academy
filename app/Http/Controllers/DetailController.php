@@ -16,4 +16,9 @@ class DetailController extends Controller
     {
         return Inertia::render('DetailClass/Flutter');
     }
+
+    public function uiux()
+    {
+        return Inertia::render('DetailClass/Uiux');
+    }
 }

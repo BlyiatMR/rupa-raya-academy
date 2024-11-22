@@ -33,18 +33,17 @@ const activeSection = ref('penjelasan');
     <Head title="Welcome" />
     <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
 
-        <Navbar />
+        <Navbar></Navbar>
 
         <section class="">
             <div class="relative max-w-[1440px] sm:mx-auto sm:pt-40 pt-20 pb-20 mx-5">
-
-                <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
-                <div class="absolute -top-52 -right-52 blur-[200px] opacity-20 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
-
                 <div class="relative mx-auto py-10 z-50">
 
-                    <p class="w-fit mx-auto flex gap-3 mb-2 items-center text-gray-300 font-bold text-lg border border-gray-300 py-2 px-5 rounded-3xl">Batch 3 Dibuka</p>
-                    <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent mt-5">Fullstack Web Development</h1>
+                    <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
+                    <div class="absolute -top-52 -right-52 blur-[200px] opacity-20 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
+
+                    <p class="w-fit mx-auto flex gap-3 items-center text-gray-300 font-bold text-lg border border-gray-300 py-2 px-5 rounded-3xl mb-2">Batch 2 Dibuka</p>
+                    <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent mt-5">UI/UX Design For Mobile App</h1>
                     <!-- <div class="text-white font-bold mt-5 text-3xl text-center">
                         <span>{{ countdown.days }} Hari</span> : 
                         <span>{{ countdown.hours }} Jam</span> : 
@@ -69,17 +68,17 @@ const activeSection = ref('penjelasan');
                                 'w-32 max-[360px]:w-28 max-[320px]:w-full text-center border font-semibold border-gray-300 rounded-lg py-2 px-3 hover:bg-blue-600 hover:text-white hover:border-blue-600 duration-300': activeSection !== 'jadwal'}">Jadwal</button>
                         </div>
                         <div v-if="activeSection === 'penjelasan'" class="space-y-7">
-                            <h1 class="text-3xl tracking-wide text-white font-semibold">Kelas Fullstack Web Development</h1>
+                            <h1 class="text-3xl tracking-wide text-white font-semibold">Kelas UI/UX Design For Mobile App</h1>
                             <hr class="h-px my-8 border-0 bg-gray-600">
-                            <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Kuasai kemampuan membangun website modern dari backend hingga frontend dengan Laravel. Kelas ini <span class="text-white font-bold">Dirancang Untuk Pemula Maupun Profesional yang Ingin Meningkatkan Skill</span> dengan studi kasus nyata dan bimbingan mentor berpengalaman.</p>
-                            <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Belajar lebih mudah <span class="text-white font-bold">dengan Materi yang Terstruktur, Praktik Langsung, dan Fokus Pada Kebutuhan Industri.</span> Mulai dari autentikasi pengguna, integrasi API, hingga deploy aplikasi, semua dipandu langkah demi langkah. Daftar sekarang dan jadilah developer yang siap bersaing di dunia kerja</p>
+                            <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Pelajari cara merancang antarmuka pengguna (UI) dan pengalaman pengguna (UX) yang menarik untuk aplikasi mobile dengan fokus pada kebutuhan pengguna. Kelas ini cocok untuk Pemula hingga Profesional yang ingin menguasai prinsip desain modern, dari wireframing hingga prototyping interaktif.</p>
+                            <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Dilengkapi dengan studi kasus dan bimbingan dari mentor ahli, Anda akan belajar membuat desain yang responsif, intuitif, dan mudah diakses. Dengan pendekatan praktis dan langsung, Anda akan siap menghadapi tantangan industri serta menghasilkan aplikasi mobile yang memukau dan fungsional.</p>
                             <p class="tracking-wider leading-normal text-white font-bold sm:text-lg text-base">Kami Akan Menyediakan Fasilitas Selama Sesi Pembelajaran Berupa Personal Computer dengan Spesiffikasi Tinggi Untuk Tiap Peserta Selama Masa Pembelajaran.</p>
                             <div class="flex sm:gap-20 gap-3 flex-wrap">
                                 <div>
                                     <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base"><i class="fa-solid fa-check text-gray-300 mr-2"></i> Pembelajaran dari Ahli</p>
-                                    <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base"><i class="fa-solid fa-check text-gray-300 mr-2"></i> Proyek Akhir Portfolio</p>
+                                    <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base"><i class="fa-solid fa-check text-gray-300 mr-2"></i> Pengenalan Dasar UI/UX</p>
                                     <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base"><i class="fa-solid fa-check text-gray-300 mr-2"></i> Pengalaman Baru</p>
-                                    <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base"><i class="fa-solid fa-check text-gray-300 mr-2"></i> Kelas Interaktif</p>
+                                    <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base"><i class="fa-solid fa-check text-gray-300 mr-2"></i> Fundamental Flutter & Dart</p>
                                 </div>
                                 <div>
                                     <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base"><i class="fa-solid fa-check text-gray-300 mr-2"></i> Voucher Discount Kelas Lain</p>
@@ -92,12 +91,8 @@ const activeSection = ref('penjelasan');
                                 <h3 class="tracking-wider leading-normal text-gray-300 sm:text-lg text-lg">Tools yang Digunakan:</h3>
                                 <div class="flex gap-5 pt-3">
                                     <div class="flex flex-col gap-2 items-center">
-                                        <img class="w-20" src="/images/vscode.jpg" alt="">
-                                        <p class="text-gray-300">Visual Studio Code</p>
-                                    </div>
-                                    <div class="flex flex-col gap-2 items-center">
-                                        <img class="w-[91px]" src="/images/laragon.jpg" alt="">
-                                        <p class="text-gray-300">Laragon</p>
+                                        <img class="w-20" src="/images/uiux-class/figma.jpg" alt="">
+                                        <p class="text-gray-300">Figma</p>
                                     </div>
                                 </div>
                             </div>
@@ -111,14 +106,16 @@ const activeSection = ref('penjelasan');
                         </div>
                         <div v-if="activeSection === 'mentor'" class="space-y-7">
                             <div class="flex items-center gap-5">
-                                <img class="w-20" src="/images/profile-instructor.jpg" alt="">
+                                <div class="relative overflow-hidden rounded-full">
+                                    <img class="object-cover w-20 scale-125" src="/images/uiux-class/instructor-uiux.jpg" alt="">
+                                </div>
                                 <div>
-                                    <h1 class="text-3xl tracking-wide text-white font-semibold">Aliem Arif Perkasa</h1>
-                                    <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Manager Fullstack Web Development</p>
+                                    <h1 class="text-3xl tracking-wide text-white font-semibold">Abd. Rahim Saleh</h1>
+                                    <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">UI/UX Designer KALLA</p>
                                 </div>
                             </div>
                             <hr class="h-px my-8 border-0 bg-gray-600">
-                            <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Aliem Arif Perkasa adalah seorang Fullstack Web Developer berpengalaman. Dalam kelas ini, <span class="font-bold">Aliem Akan Membimbing Kamu Menguasai Front-End dan Back-End Development</span> dengan pendekatan yang praktis dan mudah dipahami.</p>
+                            <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Abd. Rahim Saleh adalah seorang UI/UX Designer berbakat yang berkontribusi di KALLA. Dengan keahliannya dalam menciptakan desain antarmuka yang estetis dan pengalaman pengguna yang intuitif, Rahim memastikan setiap produk digital yang dikembangkan mencerminkan kebutuhan pengguna sekaligus nilai perusahaan.</p>
                             <div class="space-y-3">
                                 <h3 class="tracking-wider leading-normal text-gray-300 sm:text-lg text-lg">Sosial Media:</h3>
                                 <div class="flex gap-5">
@@ -135,18 +132,20 @@ const activeSection = ref('penjelasan');
                             <p class="tracking-wider leading-normal text-gray-300 sm:text-lg text-base">Dengan suasana yang kolaboratif, peserta diajak untuk berinteraksi, berbagi ide, dan memecahkan masalah bersama.</p>
                             <div class="flex flex-wrap justify-center gap-5">
                                 <div class="relative overflow-hidden w-64 h-60 rounded-lg">
-                                    <img class="object-cover scale-105" src="/images/fullstack/img-1.jpg" alt="">
+                                    <img class="object-cover scale-150" src="/images/uiux-class/uiux-img-1.jpg" alt="">
                                 </div>
-                                <img class="object-cover w-64 h-60 rounded-lg" src="/images/fullstack/img-2.jpg" alt="">
                                 <div class="relative overflow-hidden w-64 h-60 rounded-lg">
-                                    <img class="object-cover scale-150" src="/images/fullstack/img-3.jpg" alt="">
+                                    <img class="object-cover scale-150" src="/images/uiux-class/uiux-img-2.jpg" alt="">
+                                </div>
+                                <div class="relative overflow-hidden w-64 h-60 rounded-lg">
+                                    <img class="object-cover scale-150" src="/images/uiux-class/uiux-img-3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
                         <div v-if="activeSection === 'jadwal'" class="space-y-7">
                             <h1 class="text-3xl tracking-wide text-white font-semibold">Jadwal Kelas</h1>
                             <hr class="h-px my-8 border-0 bg-gray-600">
-                            <img class="w-full rounded-lg" src="/images/fullstack/schedule.jpg" alt="">
+                            <img class="w-full rounded-lg" src="/images/uiux-class/schedule-uiux.jpg" alt="">
                         </div>
                     </div>
 
@@ -155,30 +154,30 @@ const activeSection = ref('penjelasan');
                             <table class="mx-auto">
                                 <tr class="text-gray-300 text-lg">
                                     <td>Pertemuan</td>
-                                    <td class="text-end">10x Pertemuan</td>
+                                    <td class="text-end">7x</td>
                                 </tr>
                                 <tr class="text-gray-300 text-lg">
                                     <td>Durasi Kelas</td>
-                                    <td class="text-end">3 Jam</td>
+                                    <td class="text-end">2 Jam</td>
                                 </tr>
                                 <tr class="text-gray-300 text-lg">
                                     <td class="w-40 max-sm:w-36" colspan="1">Mulai</td>
-                                    <td class="text-end">2 November 2024</td>
+                                    <td class="text-end">9 Desember 2024</td>
                                 </tr>
                                 <tr class="text-gray-300 text-lg">
                                     <td class="w-40 max-sm:w-36" colspan="1">Selesai</td>
-                                    <td class="text-end">1 Desember 2024</td>
+                                    <td class="text-end">23 Desember 2024</td>
                                 </tr>
                             </table>
                         </div>
                         <div class="border border-gray-600 bg-gray-600 bg-opacity-5 backdrop-blur-3xl shadow-2xl rounded-lg py-7 px-5 z-50 space-y-7">
                             <div class="w-fit mx-auto">
-                                <p class="text-gray-300 font-extrabold text-base"><s>Rp. 1.398.000</s></p>
-                                <h1 class="text-white font-bold sm:text-5xl text-4xl text-center">Rp. 699.000</h1>
+                                <p class="text-gray-300 font-extrabold text-base"><s>Rp. 1.298.000</s></p>
+                                <h1 class="text-white font-bold sm:text-5xl text-4xl text-center">Rp. 649.000</h1>
                             </div>
                             <div class="flex justify-center gap-3">
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScjeqPgSSOUUw6M8SmVACmREDgPg8t99sXK_G1xJaEpfoh08Q/viewform" target="_blank" class="sm:w-36 w-28 text-center bg-blue-600 text-white sm:text-lg text-base font-semibold py-2 px-4 rounded-lg hover:-translate-y-1 duration-300">Daftar</a>
-                                <a href="https://api.whatsapp.com/send?phone=+6289526791153&text=https://api.whatsapp.com/send?phone=+6289526791153&text=Halo Kak. Saya tertarik untuk mengetahui lebih lanjut tentang kelas Fullstack Web Development. Apakah saya bisa mendapatkan informasi lengkapnya? Terima kasih" target="_blank" class="sm:w-36 w-28 text-center bg-blue-600 text-white sm:text-lg text-base font-semibold py-2 px-4 rounded-lg hover:-translate-y-1 duration-300">Hubungi</a>
+                                <a href="https://api.whatsapp.com/send?phone=+6289526791153&text=Halo Kak. Saya tertarik untuk mengetahui lebih lanjut tentang kelas UI/UX Design For Mobile App. Apakah saya bisa mendapatkan informasi lengkapnya? Terima kasih" target="_blank" class="sm:w-36 w-28 text-center bg-blue-600 text-white sm:text-lg text-base font-semibold py-2 px-4 rounded-lg hover:-translate-y-1 duration-300">Hubungi</a>
                             </div>
                         </div>
                     </div>

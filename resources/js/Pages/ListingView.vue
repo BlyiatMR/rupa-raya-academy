@@ -38,6 +38,7 @@ export default {
           name: "Flutter Mobile Apps",
           date: "09 November 2024",
           link: "/detail/flutter",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLSexJlmu983IOzuRT7EJrGB2wpkc7tqkV5REFz73a05nLcuALA/viewform",
           img: "/images/bg-course.jpg",
           price: "Rp. 1.498.000",
           discount: "Rp. 749.000",
@@ -46,6 +47,7 @@ export default {
           name: "Fullstack Web Development",
           date: "02 November 2024",
           link: "/detail/fullstack",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLScjeqPgSSOUUw6M8SmVACmREDgPg8t99sXK_G1xJaEpfoh08Q/viewform",
           img: "/images/bg-fullstack.jpg",
           price: "Rp. 1.398.000",
           discount: "Rp. 699.000",
@@ -53,6 +55,8 @@ export default {
         {
           name: "UI/UX Design Mobile App",
           date: "02 September 2024",
+          link: "/detail/uiux",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLSd36nibWMNiLXB5bgJcQGRnM9EL3bhDWJgeDrzuqb8g5B4gsw/viewform",
           img: "/images/bg-uiux.jpg",
           price: "Rp. 1.298.000",
           discount: "Rp. 649.000",
@@ -66,13 +70,19 @@ export default {
     <Head title="Welcome" />
     <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
       <Navbar />
+
+      <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
+      <div class="absolute -top-52 -right-52 blur-[200px] opacity-20 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
   
       <!-- Section Header -->
       <section>
-        <div class="max-w-[1440px] sm:mx-auto mx-5 sm:pt-40 sm:pb-30 py-10">
-          <div class="mb-10">
-            <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">
-              Daftar Kursus/Kelas
+        <div class="max-w-[1440px] sm:mx-auto sm:pt-40 pt-20 pb-20 mx-5">
+          <div class="mx-auto pt-10">
+            <h3 class="font-semibold text-center text-xl text-blue-500">
+              Daftar Kelas/Kursus
+            </h3>
+            <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold my-5 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">
+              .   .   .Kelas Pilihan untuk Masa Depan Anda.   .   .
             </h1>
             <p class="text-base text-gray-300 text-center tracking-wide">
               Pilih Kelas Yang Anda Butuhkan Untuk Belajar
@@ -154,7 +164,7 @@ export default {
                 </div>
 
                 <div class="flex items-center gap-x-5 mt-5 z-50">
-                  <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
+                  <a :href="general.list" target="_blank" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
                   <div class="flex flex-col">
                     <p class="text-gray-300 font-extrabold text-base"><s>{{ general.price }}</s></p>
                     <p class="text-white font-extrabold text-xl">{{ general.discount }}</p>
