@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -15,28 +16,27 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'verified'])->prefix('admin')->group( function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
-Route::prefix('/class')->group(function () {
-    Route::get('/', [CourseController::class, 'index'])->name('course.index');
-    
-    Route::get('/detail/{slug}', [CourseController::class, 'show'])->name('course.detail');
+    Route::group(['prefix' => 'class'],function () {
+            Route::get('/', [CourseController::class, 'index'])->name('course.index');
 
-    // create
-    Route::get('/create', [CourseController::class, 'create'])->name('course.create');
-    Route::post('/', [CourseController::class, 'store'])->name('course.store');
+            Route::get('/detail/{slug}', [CourseController::class, 'show'])->name('course.detail');
 
-    // edit
-    Route::get('/edit/{id}', [CourseController::class, 'edit'])->name('course.edit');
-    Route::post('/{id}', [CourseController::class, 'update'])->name('course.update');
+            // create
+            Route::get('/create', [CourseController::class, 'create'])->name('course.create');
+            Route::post('/', [CourseController::class, 'store'])->name('course.store');
 
-    // delete
-    Route::get('/delete/{id}', [CourseController::class, 'destroy'])->name('course.delete');
+            // edit
+            Route::get('/edit/{id}', [CourseController::class, 'edit'])->name('course.edit');
+            Route::post('/{id}', [CourseController::class, 'update'])->name('course.update');
 
-    // return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+            // delete
+            Route::get('/delete/{id}', [CourseController::class, 'destroy'])->name('course.delete');
+    });
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

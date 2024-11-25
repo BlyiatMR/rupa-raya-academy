@@ -39,7 +39,7 @@ import { Head } from '@inertiajs/vue3';
                         <p class="mb-3 text-right">
                             <a class="py-1 px-3 bg-gray-300 rounded" href="/class/create">Buat kelas</a>
                         </p>
-                        
+
                         <div class="flex flex-wrap">
                             <div class="flex-[0_0_33%] p-2" v-for="(item, index) in $page.props.course" :key="index">
                                 <div class="bg-gray-300 mt-2 px-4 py-2 rounded shadow">
