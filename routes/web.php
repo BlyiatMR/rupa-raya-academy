@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\DetailController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ProfileController;
@@ -25,6 +24,11 @@ Route::prefix('/about')->group(function () {
 
 Route::prefix('/listing')->group(function () {
     Route::get('/', [ListingController::class, 'index'])->name('listing.index');
+    Route::get('/fullstack', [ListingController::class, 'fullstack'])->name('fullstack.index');
+    Route::get('/flutter', [ListingController::class, 'flutter'])->name('flutter.index');
+    Route::get('/uiux', [ListingController::class, 'uiux'])->name('uiux.index');
+    Route::get('/3darchitectural', [ListingController::class, 'architectural'])->name('3darchitectural.index');
+    Route::get('/3dmodelling', [ListingController::class, 'modelling'])->name('3dmodelling.index');
 });
 
 Route::prefix('/gallery')->group(function () {
@@ -33,12 +37,6 @@ Route::prefix('/gallery')->group(function () {
 
 Route::prefix('/news')->group(function () {
     Route::get('/', [NewsController::class, 'index'])->name('news.index');
-});
-
-Route::prefix('/detail')->group(function () {
-    Route::get('/fullstack', [DetailController::class, 'fullstack'])->name('fullstack.fullstack');
-    Route::get('/flutter', [DetailController::class, 'flutter'])->name('flutter.flutter');
-    Route::get('/uiux', [DetailController::class, 'uiux'])->name('uiux.uiux');
 });
 
 Route::get('/dashboard', function () {

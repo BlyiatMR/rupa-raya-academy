@@ -5,8 +5,8 @@ export default {
       classGeneral: [
         {
           name: "Flutter Mobile Apps",
-          date: "09 November 2024",
-          link: "/detail/flutter",
+          date: "14-12-2024",
+          link: "/listing/flutter",
           list: "https://docs.google.com/forms/d/e/1FAIpQLSexJlmu983IOzuRT7EJrGB2wpkc7tqkV5REFz73a05nLcuALA/viewform",
           img: "/images/bg-course.jpg",
           price: "Rp. 1.498.000",
@@ -14,8 +14,8 @@ export default {
         },
         {
           name: "Fullstack Web Development",
-          date: "02 November 2024",
-          link: "/detail/fullstack",
+          date: "08-12-2024",
+          link: "/listing/fullstack",
           list: "https://docs.google.com/forms/d/e/1FAIpQLScjeqPgSSOUUw6M8SmVACmREDgPg8t99sXK_G1xJaEpfoh08Q/viewform",
           img: "/images/bg-fullstack.jpg",
           price: "Rp. 1.398.000",
@@ -23,8 +23,8 @@ export default {
         },
         {
           name: "UI/UX Design Mobile App",
-          date: "02 September 2024",
-          link: "/detail/uiux",
+          date: "09-12-2024",
+          link: "/listing/uiux",
           list: "https://docs.google.com/forms/d/e/1FAIpQLSd36nibWMNiLXB5bgJcQGRnM9EL3bhDWJgeDrzuqb8g5B4gsw/viewform",
           img: "/images/bg-uiux.jpg",
           price: "Rp. 1.298.000",

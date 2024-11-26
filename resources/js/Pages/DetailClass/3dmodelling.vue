@@ -5,16 +5,16 @@ import EffectClass from '@/Components/EffectClass.vue';
 import NavClass from '@/Components/NavClass.vue';
 import CtaHome from '@/Components/CtaHome.vue';
 import Footer from '@/Components/Footer.vue';
-import { ref } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 
 // Import Component
-import Header from '@/Components/FlutterComponent/Header.vue';
-import SectionExplanation from '@/Components/FlutterComponent/SectionExplanation.vue';
-import SectionMentor from '@/Components/FlutterComponent/SectionMentor.vue';
-import SectionAtmosphere from '@/Components/FlutterComponent/SectionAtmosphere.vue';
-import SectionTimetable from '@/Components/FlutterComponent/SectionTimetable.vue';
-import SectionLearning from '@/Components/FlutterComponent/SectionLearning.vue';
-import FurtherInformation from '@/Components/FlutterComponent/FurtherInformation.vue';
+import Header from '@/Components/ModellingComponent/Header.vue';
+import SectionExplanation from '@/Components/ModellingComponent/SectionExplanation.vue';
+import SectionMentor from '@/Components/ModellingComponent/SectionMentor.vue';
+import SectionAtmosphere from '@/Components/ModellingComponent/SectionAtmosphere.vue';
+import SectionTimetable from '@/Components/ModellingComponent/SectionTimetable.vue';
+import SectionLearning from '@/Components/ModellingComponent/SectionLearning.vue';
+import FurtherInformation from '@/Components/ModellingComponent/FurtherInformation.vue';
 
 const activeSection = ref('penjelasan');
 </script>
@@ -34,39 +34,38 @@ const activeSection = ref('penjelasan');
 
 <template>
     <Head title="Welcome" />
-
     <div class="relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
-        
+
         <!-- Navbar -->
-        <Navbar />
+        <Navbar></Navbar>
 
         <!-- Main -->
         <section>
             <div class="relative max-w-[1440px] sm:mx-auto sm:pt-40 pt-20 pb-20 mx-5">
-                
-                <!-- Effect -->
+
                 <EffectClass />
 
-                <!-- Header -->
                 <Header />
-
-                <div class="flex flex-wrap gap-5 justify-center mt-10 sm:mx-5 mx-0">
+                                        
+                <div class="flex flex-wrap gap-5 justify-center items-stretch mt-10 sm:mx-5 mx-0">
                     <div class="relative overflow-hidden w-[56rem] border border-gray-600 bg-gray-600 bg-opacity-5 backdrop-blur-3xl shadow-2xl rounded-lg py-7 px-8 z-50 h-fit">
                         
-                        <!-- Nav Class -->
                         <NavClass :activeSection="activeSection" @update:activeSection="activeSection = $event"/>
 
-                        <!-- Component Section -->
-                        <SectionExplanation v-if="activeSection === 'penjelasan'" />
-                        <SectionMentor v-if="activeSection === 'mentor'" />
-                        <SectionAtmosphere v-if="activeSection === 'suasana'" />
-                        <SectionTimetable v-if="activeSection === 'jadwal'" />
-                        <SectionLearning v-if="activeSection === 'materi'" />
+                        <SectionExplanation v-if="activeSection === 'penjelasan'"/>
+
+                        <SectionMentor v-if="activeSection === 'mentor'"/>
+
+                        <SectionAtmosphere v-if="activeSection === 'suasana'"/>
+
+                        <SectionTimetable v-if="activeSection === 'jadwal'"/>
+                        
+                        <SectionLearning v-if="activeSection === 'materi'"/>
+                        
                     </div>
 
-                    <!-- Informasi tambahan di bagian samping -->
                     <FurtherInformation />
-
+                    
                 </div>
             </div>
         </section>
@@ -76,5 +75,6 @@ const activeSection = ref('penjelasan');
 
         <!-- Footer -->
         <Footer />
+
     </div>
 </template>

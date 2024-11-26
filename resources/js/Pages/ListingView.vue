@@ -13,31 +13,26 @@ export default {
       classSpecial: [
         {
           name: "3D Architectural Rendering",
-          date: "09 November 2024",
+          link: "/listing/3darchitectural",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLScWQS2TQw8ZG3zEOZ57wRKU5pg-BVj5zT-NS4kae-MesmSRlg/viewform",
           price: "Rp. 1.800.000",
           discount: "Rp. 899.000",
           iconPath: "m12 3l7.794 4.5v7.845a2 2 0 0 1-1 1.732L13 20.423a2 2 0 0 1-2 0l-5.794-3.346a2 2 0 0 1-1-1.732V7.5z M12 7v5l-4.33 2.5M12 12l4.33 2.5",
         },
         {
-          name: "SketchUp 3D Modelling",
-          date: "09 November 2024",
-          price: "Rp. 1.398.000",
-          discount: "Rp. 699.000",
+          name: "3D Modelling",
+          link: "/listing/3dmodelling",
+          list: "https://docs.google.com/forms/d/e/1FAIpQLScF7Cyw5eU8TNZtHaftDjNqaKhY7BJMC2OuAlV3_1JSGiUl9A/viewform",
+          price: "Rp. 1.000.000",
+          discount: "Rp. 499.000",
           iconPath: "M10.55 2.876L4.595 6.182a2.98 2.98 0 0 0-1.529 2.611v6.414a2.98 2.98 0 0 0 1.529 2.61l5.957 3.307a2.98 2.98 0 0 0 2.898 0l5.957-3.306a2.98 2.98 0 0 0 1.529-2.611V8.793a2.98 2.98 0 0 0-1.529-2.61L13.45 2.876a2.98 2.98 0 0 0-2.898 0Z M20.33 6.996L12 12L3.67 6.996M12 21.49V12",
-        },
-        {
-          name: "3D Product & Photoshoot",
-          date: "09 November 2024",
-          price: "Rp. 1.298.000",
-          discount: "Rp. 699.000",
-          iconPath: "M11.5 2.134a1 1 0 0 1 1 0l7.794 4.5a1 1 0 0 1 .5.866v7.845a3 3 0 0 1-1.5 2.598L13.5 21.29a3 3 0 0 1-3 0l-5.794-3.346a3 3 0 0 1-1.5-2.598V7.5a1 1 0 0 1 .5-.866zM12 6a1 1 0 0 1 1 1v4.423l3.83 2.211a1 1 0 1 1-1 1.732L12 13.155l-3.83 2.211a1 1 0 1 1-1-1.732L11 11.423V7a1 1 0 0 1 1-1",
         },
       ],
       classGeneral: [
         {
           name: "Flutter Mobile Apps",
-          date: "09 November 2024",
-          link: "/detail/flutter",
+          date: "14-12-2024",
+          link: "/listing/flutter",
           list: "https://docs.google.com/forms/d/e/1FAIpQLSexJlmu983IOzuRT7EJrGB2wpkc7tqkV5REFz73a05nLcuALA/viewform",
           img: "/images/bg-course.jpg",
           price: "Rp. 1.498.000",
@@ -45,8 +40,8 @@ export default {
         },
         {
           name: "Fullstack Web Development",
-          date: "02 November 2024",
-          link: "/detail/fullstack",
+          date: "08-12-2024",
+          link: "/listing/fullstack",
           list: "https://docs.google.com/forms/d/e/1FAIpQLScjeqPgSSOUUw6M8SmVACmREDgPg8t99sXK_G1xJaEpfoh08Q/viewform",
           img: "/images/bg-fullstack.jpg",
           price: "Rp. 1.398.000",
@@ -54,8 +49,8 @@ export default {
         },
         {
           name: "UI/UX Design Mobile App",
-          date: "02 September 2024",
-          link: "/detail/uiux",
+          date: "09-12-2024",
+          link: "/listing/uiux",
           list: "https://docs.google.com/forms/d/e/1FAIpQLSd36nibWMNiLXB5bgJcQGRnM9EL3bhDWJgeDrzuqb8g5B4gsw/viewform",
           img: "/images/bg-uiux.jpg",
           price: "Rp. 1.298.000",
@@ -68,7 +63,7 @@ export default {
 </script>
 <template>
     <Head title="Welcome" />
-    <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
+    <div class="relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
       <Navbar />
 
       <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
@@ -118,7 +113,7 @@ export default {
                     <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="special.iconPath" />
                   </svg>
                 </div>
-                <a href="#" class="text-xl font-semibold text-white tracking-wide mb-1">{{ special.name }}</a>
+                <a :href="special.link" class="text-xl font-semibold text-white tracking-wide mb-1">{{ special.name }}</a>
   
                 <div class="flex gap-x-2">
                   <p class="border-r text-white pr-2">Jumlah Pendaftar</p>
@@ -126,7 +121,7 @@ export default {
                 </div>
   
                 <div class="flex items-center gap-x-5 mt-5 z-50">
-                  <a href="#" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
+                  <a :href="special.list" target="_blank" class="text-blue-600 font-semibold bg-white py-2 px-4 rounded-xl">Daftar</a>
                   <div class="flex flex-col">
                     <p class="text-gray-300 font-extrabold text-base"><s>{{ special.price }}</s></p>
                     <p class="text-white font-extrabold text-xl">{{ special.discount }}</p>
@@ -173,6 +168,7 @@ export default {
               </div>
             </div>
           </div>
+
         </div>
       </section>
 

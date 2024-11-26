@@ -39,7 +39,7 @@ export default {
           <div class="flex justify-center sm:gap-x-5 max-sm:flex-col">
             <div class="flex max-sm:justify-center mt-10">
               <a
-                href="#"
+                href="/listing"
                 class="max-sm:w-48 max-sm:justify-center flex items-center gap-x-3 text-white bg-blue-600 sm:text-lg tracking-wide py-3 px-4 rounded-lg font-semibold hover:-translate-y-1 duration-300"
               >
                 Lihat Kelas Kami
@@ -78,11 +78,7 @@ export default {
           </div>
         </div>
         <div class="flex justify-center gap-5 sm:mt-10 mt-10 flex-wrap">
-          <div
-            v-for="(feature, index) in features"
-            :key="index"
-            class="w-fit border border-gray-500 py-2 px-5 rounded-lg"
-          >
+          <div v-for="(feature, index) in features" :key="index" class="w-fit max-sm:w-full max-sm:mx-10 border border-gray-500 py-2 px-5 rounded-lg">
             <p class="text-lg z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm">
               {{ feature }}
             </p>
