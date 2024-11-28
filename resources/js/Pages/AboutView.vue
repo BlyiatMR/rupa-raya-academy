@@ -7,7 +7,7 @@ import Footer from '@/Components/Footer.vue';
 </script>
 <template>
     <Head title="Welcome" />
-    <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A]">
+    <div class="font-['Urbanist'] relative overflow-x-hidden">
   
       <!-- Navbar -->
       <Navbar />
@@ -29,6 +29,18 @@ import Footer from '@/Components/Footer.vue';
             </p>
             <Videos />
           </div>
+
+          <div class="flex justify-center flex-wrap gap-x-20 gap-y-10 sm:pb-10 sm:pt-5 pb-5">
+            <div class="xl:w-[32rem] w-[25rem]">
+              <h1 class="mx-auto z-50 text-center leading-tight tracking-wide text-2xl font-extrabold my-5 text-white sm:text-5xl">Visi</h1>
+              <p class="max-w-4xl text-lg mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm">Mencetak generasi kreatif dan inovatif melalui kelas berkualitas di bidang teknologi dan industri kreatif, serta membangun budaya unggul yang mampu bersaing.</p>
+            </div>
+            <div class="xl:w-[32rem] w-[25rem]">
+              <h1 class="mx-auto z-50 text-center leading-tight tracking-wide text-2xl font-extrabold my-5 text-white sm:text-5xl">Misi</h1>
+              <p class="max-w-4xl text-lg mx-auto z-50 text-center tracking-wide leading-normal text-gray-300 max-sm:text-sm">Menyediakan kelas yang relevan dengan kebutuhan industri untuk membekali peserta dengan keterampilan praktis di bidang teknologi dan kreatif.</p>
+            </div>
+          </div>
+
         </div>
       </section>
   

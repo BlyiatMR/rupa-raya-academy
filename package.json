@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "@fancyapps/ui": "^5.0.36",
+        "@vueuse/core": "^12.0.0",
+        "gsap": "^3.12.5",
         "lightbox2": "^2.11.5",
         "swiper": "^11.1.14",
         "tailwind-scrollbar-hide": "^1.1.7"

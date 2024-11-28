@@ -1,5 +1,5 @@
 <template>
-    <div class="flex xl:flex-col gap-5">
+    <div class="flex xl:flex-col max-sm:flex-col gap-5">
         <div class="border border-gray-600 bg-gray-600 bg-opacity-5 backdrop-blur-3xl shadow-2xl rounded-lg py-7 px-5 z-50 space-y-7">       
             <table class="mx-auto">
                 <tr class="text-gray-300 text-lg">

@@ -63,7 +63,7 @@ export default {
 </script>
 <template>
     <Head title="Welcome" />
-    <div class="relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
+    <div class="relative overflow-x-hidden z-50">
       <Navbar />
 
       <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>

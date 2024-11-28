@@ -64,7 +64,7 @@ export default {
 </script>
 <template>
   <Head title="Welcome" />
-  <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
+  <div class="font-['Urbanist'] relative overflow-x-hidden z-50">
     <Navbar />
 
     <!-- Section Header -->

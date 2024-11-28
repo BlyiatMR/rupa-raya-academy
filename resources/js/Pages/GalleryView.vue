@@ -2,6 +2,10 @@
 import Navbar from '@/Components/Navbar.vue';
 import CtaHome from '@/Components/CtaHome.vue';
 import Footer from '@/Components/Footer.vue';
+import { useDark, useToggle } from "@vueuse/core";
+
+const isDark = useDark()
+const toggleDark = useToggle(isDark)
 
 Fancybox.bind("[data-fancybox='gallery']", {
   infinite: false,
@@ -23,7 +27,7 @@ const GalleryImage = ({ src }) => (
 <template>
   <Head title="Welcome" />
 
-  <div class="font-['Urbanist'] relative overflow-x-hidden bg-gradient-to-br from-[#0F0F0F] to-[#0D1B2A] z-50">
+  <div class="font-['Urbanist'] relative overflow-x-hidden z-50">
     <!-- Navbar -->
     <Navbar />
 
@@ -78,3 +82,11 @@ const GalleryImage = ({ src }) => (
     <Footer />
   </div>
 </template>
+<style>
+html.dark {
+    color-scheme: dark;
+}
+body {
+    @apply bg-gradient-to-br dark:from-[#0F0F0F] dark:to-[#0D1B2A] dark:bg-slate-50;
+}
+</style>
