@@ -66,8 +66,8 @@ export default {
     <div class="relative overflow-x-hidden z-50">
       <Navbar />
 
-      <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
-      <div class="absolute -top-52 -right-52 blur-[200px] opacity-20 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
+      <div class="absolute max-sm:hidden -top-52 -left-52 blur-[200px] dark:opacity-20 opacity-30 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
+      <div class="absolute max-sm:hidden -top-52 -right-52 blur-[200px] dark:opacity-20 opacity-30 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
   
       <!-- Section Header -->
       <section>
@@ -76,17 +76,17 @@ export default {
             <h3 class="font-semibold text-center text-xl text-blue-500">
               Daftar Kelas/Kursus
             </h3>
-            <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold my-5 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">
+            <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold my-5 dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent">
               .   .   .Kelas Pilihan untuk Masa Depan Anda.   .   .
             </h1>
-            <p class="text-base text-gray-300 text-center tracking-wide">
+            <p class="text-lg dark:text-gray-300 text-slate-600 dark:font-normal font-semibold text-center tracking-wide">
               Pilih Kelas Yang Anda Butuhkan Untuk Belajar
             </p>
           </div>
   
           <!-- Kelas Umum -->
           <div class="mt-20">
-            <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">
+            <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent">
               Kelas Umum <span class="border border-gray-300 px-2 rounded-full">3</span>
             </h1>
   
@@ -94,7 +94,7 @@ export default {
               <div
                 v-for="(special, index) in classSpecial"
                 :key="index"
-                class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-xl shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50"
+                class="w-[348px] relative overflow-hidden dark:bg-blue-600 bg-blue-500 px-5 py-6 rounded-xl shadow-2xl shadow-gray-400 dark:shadow-blue-950 hover:-translate-y-2 duration-300 z-50"
               >
                 <svg
                   class="absolute -top-4 -right-14 opacity-10 rotate-12 w-64 -z-50"
@@ -133,7 +133,7 @@ export default {
   
           <!-- Kelas Khusus -->
           <div>
-            <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">
+            <h1 class="text-3xl text-center tracking-wide font-extrabold mb-2 dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent">
               Kelas Khusus <span class="border border-gray-300 px-2 rounded-full">3</span>
             </h1>
   
@@ -141,7 +141,7 @@ export default {
               <div
                 v-for="(general, index) in classGeneral"
                 :key="index"
-                class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50"
+                class="w-[348px] relative overflow-hidden dark:bg-blue-600 bg-blue-500 px-5 py-6 rounded-lg shadow-2xl shadow-gray-400 dark:shadow-blue-950 hover:-translate-y-2 duration-300 z-50"
               >
                 <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
                 <div class="absolute -left-7 -rotate-[37deg]">
@@ -178,5 +178,12 @@ export default {
       <!-- Footer -->
       <Footer />
     </div>
-  </template>
-  
+</template>
+<style>
+html.dark {
+  color-scheme: dark;
+}
+body {
+  @apply bg-gradient-to-br dark:from-[#0F0F0F] dark:to-[#0D1B2A] bg-gray-100;
+}
+</style>

@@ -8,12 +8,21 @@ const toggleDark = useToggle(isDark)
     export default {
     data() {
         return {
-        isMenuOpen: false
+        isMenuOpen: false,
+        isDarkMode: true
         };
     },
     methods: {
         toggleMenu() {
         this.isMenuOpen = !this.isMenuOpen;
+        },
+        toggleDarkMode() {
+          this.isDarkMode = !this.isDarkMode;
+          if (this.isDarkMode) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
         }
     }
     };
@@ -39,9 +48,20 @@ const toggleDark = useToggle(isDark)
         <div class="hidden lg:flex dark:text-gray-400 text-slate-600">
           <a href="https://api.whatsapp.com/send?phone=+6289526791153&text=Halo Kak. Saya tertarik untuk mengetahui lebih lanjut tentang program di Rupa Raya Academy.
               Bisakah saya mendapatkan informasi lengkapnya? Terima kasih" target="_blank" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl dark:border-gray-700 border-gray-300 hover:text-gray-300 duration-300">Hubungi Kami</a>
-            <button @click="toggleDark()" class="px-4 py-2">
-              <svg class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path class="dark:fill-gray-400 fill-slate-600" d="M12 19a1 1 0 0 1 .993.883L13 20v1a1 1 0 0 1-1.993.117L11 21v-1a1 1 0 0 1 1-1m6.313-2.09l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7a1 1 0 0 1 1.218-1.567zm-11.306.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M4 11a1 1 0 0 1 .117 1.993L4 13H3a1 1 0 0 1-.117-1.993L3 11zm17 0a1 1 0 0 1 .117 1.993L21 13h-1a1 1 0 0 1-.117-1.993L20 11zM6.213 4.81l.094.083l.7.7a1 1 0 0 1-1.32 1.497l-.094-.083l-.7-.7A1 1 0 0 1 6.11 4.74zm12.894.083a1 1 0 0 1 .083 1.32l-.083.094l-.7.7a1 1 0 0 1-1.497-1.32l.083-.094l.7-.7a1 1 0 0 1 1.414 0M12 2a1 1 0 0 1 .993.883L13 3v1a1 1 0 0 1-1.993.117L11 4V3a1 1 0 0 1 1-1m0 5a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7"/></svg>
-            </button>
+              <button @click="toggleDarkMode()" class="px-4 py-2">
+
+                <svg v-if="isDarkMode" class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M18 12a6 6 0 1 1-12 0a6 6 0 0 1 12 0"/>
+                  <path fill="currentColor" fill-rule="evenodd" d="M12 1.25a.75.75 0 0 1 .75.75v1a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75M4.399 4.399a.75.75 0 0 1 1.06 0l.393.392a.75.75 0 0 1-1.06 1.061l-.393-.393a.75.75 0 0 1 0-1.06m15.202 0a.75.75 0 0 1 0 1.06l-.393.393a.75.75 0 0 1-1.06-1.06l.393-.393a.75.75 0 0 1 1.06 0M1.25 12a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75m19 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1a.75.75 0 0 1-.75-.75m-2.102 6.148a.75.75 0 0 1 1.06 0l.393.393a.75.75 0 1 1-1.06 1.06l-.393-.393a.75.75 0 0 1 0-1.06m-12.296 0a.75.75 0 0 1 0 1.06l-.393.393a.75.75 0 1 1-1.06-1.06l.392-.393a.75.75 0 0 1 1.061 0M12 20.25a.75.75 0 0 1 .75.75v1a.75.75 0 0 1-1.5 0v-1a.75.75 0 0 1 .75-.75" clip-rule="evenodd"/>
+                </svg>
+                <!-- Moon icon (shown in dark mode) -->
+                <svg v-else class="w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12 11.807A9 9 0 0 1 10.049 2a9.94 9.94 0 0 0-5.12 2.735c-3.905 3.905-3.905 10.237 0 14.142c3.906 3.906 10.237 3.905 14.143 0a9.95 9.95 0 0 0 2.735-5.119A9 9 0 0 1 12 11.807"/>
+                </svg>
+            
+                <!-- Sun icon (shown in light mode) -->
+                
+              </button>
         </div>
   
         <!-- Mobile Menu Icon -->

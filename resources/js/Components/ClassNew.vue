@@ -36,16 +36,16 @@ export default {
 };
 </script>
 <template>
-    <section>
+    <section class="dark:bg-slate-900 bg-blue-100">
         <div class="max-w-[1440px] sm:mx-auto mx-5 sm:py-20 py-10">
             <div class="mb-10">
-                <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Tersedia Kursus/Kelas Terbaru</h1>
-                <p class="text-base text-gray-300 text-center tracking-wide">Pilih Kelas Yang Anda Butuhkan Untuk Belajar</p>
+                <h1 class="sm:text-5xl text-3xl text-center tracking-wide font-extrabold mb-2 dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent">Tersedia Kursus/Kelas Terbaru</h1>
+                <p class="text-lg dark:text-gray-300 text-slate-600 text-center tracking-wide dark:font-normal font-semibold">Pilih Kelas Yang Anda Butuhkan Untuk Belajar</p>
             </div>
 
             <div class="flex gap-10 justify-center flex-wrap">
                 <div v-for="(general, index) in classGeneral"
-                :key="index" class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-lg shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
+                :key="index" class="w-[348px] relative overflow-hidden dark:bg-blue-600 bg-blue-500 px-5 py-6 rounded-lg shadow-2xl shadow-gray-400 dark:shadow-blue-950 hover:-translate-y-2 duration-300 z-50">
 
                     <div class="absolute -bottom-36 -left-36 w-[22rem] h-[22rem] opacity-10 bg-white rounded-full -z-40"></div>
 

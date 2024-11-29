@@ -31,15 +31,15 @@ const GalleryImage = ({ src }) => (
     <!-- Navbar -->
     <Navbar />
 
-    <div class="absolute -top-52 -left-52 blur-[200px] opacity-20 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
-    <div class="absolute -top-52 -right-52 blur-[200px] opacity-20 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
+    <div class="absolute max-sm:hidden -top-52 -left-52 blur-[200px] dark:opacity-20 opacity-30 -z-10 w-[40rem] h-[40rem] bg-blue-500 rounded-full"></div>
+      <div class="absolute max-sm:hidden -top-52 -right-52 blur-[200px] dark:opacity-20 opacity-30 -z-10 w-[35rem] h-[35rem] bg-yellow-500 rounded-full"></div>
 
     <!-- Galeri Section -->
     <section>
       <div class="max-w-[1440px] mx-auto sm:pt-40 pt-20 px-5">
         <div class="py-10 text-center">
           <h3 class="text-xl font-semibold text-blue-500">Galeri Kami</h3>
-          <h1 class="mt-5 mb-5 text-2xl font-extrabold leading-tight tracking-wide text-transparent bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text sm:text-5xl">
+          <h1 class="mt-5 mb-5 text-2xl font-extrabold leading-tight tracking-wide dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent sm:text-5xl">
             . . .Inspirasi dari Rupa Raya Academy. . .
           </h1>
           <p class="max-w-4xl mx-auto text-lg text-gray-300 tracking-wide leading-normal sm:text-base">

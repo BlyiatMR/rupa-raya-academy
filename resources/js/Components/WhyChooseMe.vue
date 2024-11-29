@@ -50,10 +50,10 @@ export default {
     <section>
         <div class="max-w-[1440px] sm:mx-auto py-10 mx-5">
             <div class="max-w-5xl mx-auto">
-                <h1 class="sm:text-5xl text-3xl leading-snug font-extrabold text-center mb-2 bg-gradient-to-r from-gray-500 via-white to-gray-500 bg-clip-text text-transparent">Mengapa Memilih Kami?</h1>
+                <h1 class="sm:text-5xl text-3xl leading-snug font-extrabold text-center mb-2 dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent">Mengapa Memilih Kami?</h1>
             </div>
             <div class="flex justify-center justify-items-stretch mt-10 gap-10 flex-wrap">
-                <div v-for="(benefit, index) in benefits" :key="index" class="w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-xl shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300">
+                <div v-for="(benefit, index) in benefits" :key="index" class="w-[348px] relative overflow-hidden dark:bg-blue-600 bg-blue-500 px-5 py-6 rounded-xl shadow-2xl shadow-gray-400 dark:shadow-blue-950 hover:-translate-y-2 duration-300">
 
                     <svg class="absolute -top-4 -right-14 opacity-10 rotate-12 w-64" xmlns="http://www.w3.org/2000/svg" :viewBox="benefit.iconViewBox" v-html="benefit.backgroundIcon"></svg>
 
@@ -68,7 +68,7 @@ export default {
             </div>
 
             <div class="flex justify-center justify-items-stretch gap-10 flex-wrap max-lg:mt-10">
-                <div v-for="(collaboration, index) in collaborations" :key="index" class="w-[348px] max-sm:w-[348px] relative overflow-hidden bg-blue-600 px-5 py-6 rounded-xl shadow-2xl shadow-blue-950 hover:-translate-y-2 duration-300 lg:mt-10 mt-0">
+                <div v-for="(collaboration, index) in collaborations" :key="index" class="w-[542px] max-[1124px]:w-[348px] relative overflow-hidden dark:bg-blue-600 bg-blue-500 px-5 py-6 rounded-xl shadow-2xl shadow-gray-400 dark:shadow-blue-950 hover:-translate-y-2 duration-300 lg:mt-10 mt-0">
 
                     <svg class="absolute -top-4 -right-14 opacity-10 rotate-12 w-64" xmlns="http://www.w3.org/2000/svg" :viewBox="collaboration.iconViewBox" v-html="collaboration.backgroundIcon"></svg>
 

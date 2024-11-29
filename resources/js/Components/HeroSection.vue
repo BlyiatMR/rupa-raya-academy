@@ -9,12 +9,31 @@ export default {
         "Mentor Profesional Berpengalaman",
         "Kurikulum yang Selalu Update",
         "Proyek Langsung untuk Portofolio",
-        "Sertifikat Resmi dan Diakui",
+        "Berkesempatan Magang",
         "Konsultasi Langsung dengan Mentor",
         "Komunitas Belajar yang Supportif",
         "Pembelajaran Interaktif & Seru",
       ],
     };
+  },
+  mounted() {
+    // GSAP animations when the page loads
+    gsap.from(".fade-in", {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.2,
+    });
+
+    gsap.from(".feature-box", {
+      opacity: 0,
+      scale: 0.8,
+      duration: 1,
+      ease: "back.out(1.7)",
+      stagger: 0.3,
+      delay: 1,
+    });
   },
 };
 </script>
@@ -23,23 +42,23 @@ export default {
   <section class="relative">
     <div class="max-w-[1440px] sm:mx-auto sm:pt-40 pt-20 pb-20 mx-5 relative z-10">
       <div class="mx-auto py-10">
-        <h3 class="font-semibold text-center text-xl text-blue-500">
+        <h3 class="font-semibold text-center text-xl text-blue-500 fade-in">
           Kursus Skill Digital Makassar
         </h3>
         <h1
-          class="mx-auto z-50 text-center leading-tight tracking-wide text-2xl font-extrabold my-5 dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 dark:bg-clip-text dark:text-transparent text-slate-800 sm:text-5xl"
+          class="mx-auto z-50 text-center leading-tight tracking-wide text-2xl font-extrabold my-5 dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent sm:text-5xl fade-in"
         >
           . . .Bangun Masa Depanmu dengan Skill Terkini. . .
         </h1>
         <p
-          class="max-w-4xl text-lg mx-auto z-50 text-center tracking-wide leading-normal dark:text-gray-300 text-slate-600 max-sm:text-sm"
+          class="max-w-4xl text-lg mx-auto z-50 text-center tracking-wide leading-normal dark:text-gray-300 text-slate-600 max-sm:text-sm dark:font-normal font-semibold fade-in"
         >
           Kuasai keterampilan yang paling dicari di dunia digital dengan metode
           pembelajaran praktis, seru, dan langsung dari mentor berpengalaman.
           Jadilah yang terdepan dan mulai perjalanan karirmu dari sini!
         </p>
 
-        <div class="flex justify-center sm:gap-x-5 max-sm:flex-col">
+        <div class="flex justify-center sm:gap-x-5 max-sm:flex-col fade-in">
           <div class="flex max-sm:justify-center mt-10">
             <a
               href="/listing"
@@ -48,7 +67,7 @@ export default {
               Lihat Kelas Kami
               <span>
                 <svg
-                  class="w-3 fill-gray-300"
+                  class="w-3 fill-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -67,7 +86,7 @@ export default {
               Tentang Kami
               <span>
                 <svg
-                  class="w-3 fill-gray-300"
+                  class="w-3 fill-white"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"
                 >
@@ -84,7 +103,7 @@ export default {
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="w-fit max-sm:w-full max-sm:mx-10 border dark:border-gray-600 border-gray-300 py-2 px-5 rounded-lg"
+          class="feature-box w-fit max-sm:w-full max-sm:mx-10 border dark:border-gray-600 border-gray-300 py-2 px-5 rounded-lg"
         >
           <p class="text-lg z-50 text-center tracking-wide leading-normal dark:text-gray-300 text-slate-600 max-sm:text-sm">
             {{ feature }}

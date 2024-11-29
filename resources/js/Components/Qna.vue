@@ -47,24 +47,24 @@
       <div class="max-w-[1440px] sm:mx-auto mx-5 sm:py-20 py-10">
         <div class="flex flex-wrap justify-center sm:gap-x-20 gap-10" dir="rtl">
           <div class="sm:max-w-lg">
-            <h1 class="text-white sm:text-5xl text-3xl mb-3 leading-snug font-semibold lg:text-start text-center">
-              Pertanyaan Untuk Kami
+            <h1 class="dark:bg-gradient-to-r dark:from-gray-500 dark:via-white dark:to-gray-500 bg-gradient-to-r from-gray-500 via-slate-800 to-gray-500 bg-clip-text text-transparent sm:text-5xl text-3xl mb-3 leading-snug font-extrabold lg:text-start text-center">
+              Pertanyaan Peserta
             </h1>
-            <p class="text-gray-300 lg:text-start text-center">
-              Kami telah merangkum beberapa pertanyaan yang sering diajukan untuk memudahkan Anda mendapatkan informasi terkait kelas, kurikulum, hingga cara mendaftar.
+            <p class="dark:text-gray-300 text-slate-600 tracking-wide text-lg dark:font-normal font-semibold lg:text-start text-center">
+              Kami telah merangkum beberapa pertanyaan yang sering diajukan untuk memudahkan Anda mendapatkan informasi terkait kelas, kurikulum, hingga cara mendaftar
             </p>
           </div>
           <div class="space-y-5" dir="ltr">
-            <div v-for="(item, index) in questions" :key="index" class="max-w-2xl border border-gray-700 py-3 px-5 rounded-xl">
+            <div v-for="(item, index) in questions" :key="index" class="max-w-2xl border border-gray-300 dark:border-gray-700 py-3 px-5 rounded-xl">
               <div @click="toggleAnswer(index)" class="cursor-pointer flex items-center gap-5">
-                <h1 class="w-full text-gray-300 font-semibold text-xl">
+                <h1 class="w-full dark:text-gray-300 text-slate-800 font-semibold text-xl">
                   {{ item.question }}
                 </h1>
-                <i :class="['fas fa-chevron-down text-gray-300 text-lg transform transition-transform duration-300', activeIndex === index ? 'rotate-180' : '']"></i>
+                <i :class="['fas fa-chevron-down dark:text-gray-300 text-slate-800 text-lg transform transition-transform duration-300', activeIndex === index ? 'rotate-180' : '']"></i>
               </div>
               <div ref="answers" :style="activeIndex === index ? { height: contentHeights[index] + 'px' } : { height: '0px' }" class="overflow-hidden transition-all duration-300 ease-in-out">
-                <hr class="h-px my-3 border-0 bg-gray-600">
-                <p class="text-gray-300 tracking-wide">
+                <hr class="h-px my-3 border-0 dark:bg-gray-600 bg-gray-200">
+                <p class="dark:text-gray-300 text-slate-600 font-semibold tracking-wide">
                   {{ item.answer }}
                 </p>
               </div>
