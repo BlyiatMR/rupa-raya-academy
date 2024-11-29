@@ -17,9 +17,9 @@
       <div class="max-w-[1440px] mx-auto flex justify-between items-center py-5 px-5 lg:px-10 border-b border-gray-700">
         <!-- Logo -->
         <div>
-          <img class="w-40" src="/images/rralogo.jpg" alt="Logo">
+          <img class="w-40" src="/images/admin_assets/rralogo.jpg" alt="Logo">
         </div>
-  
+
         <!-- Desktop Menu -->
         <div class="hidden lg:flex gap-10 border py-3 px-5 rounded-3xl border-gray-700 text-gray-400">
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Beranda</a>
@@ -28,12 +28,12 @@
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Galeri</a>
           <a href="#" class="font-semibold tracking-wide hover:text-gray-300 duration-300">Berita</a>
         </div>
-  
+
         <!-- Contact Button (Always Visible) -->
         <div class="hidden lg:block text-gray-400">
           <a href="#" class="font-semibold tracking-wide border py-3 px-5 rounded-3xl border-gray-700 hover:text-gray-300 duration-300">Hubungi Kami</a>
         </div>
-  
+
         <!-- Mobile Menu Icon -->
         <div class="lg:hidden text-gray-400" @click="toggleMenu">
           <button>
@@ -43,7 +43,7 @@
           </button>
         </div>
       </div>
-  
+
       <!-- Mobile Menu -->
       <div v-if="isMenuOpen" class="lg:hidden bg-gray-950 bg-opacity-80 backdrop-blur-md shadow-2xl shadow-slate-950 border-t border-gray-700">
         <div class="flex flex-col items-center gap-4 py-5 text-gray-400">

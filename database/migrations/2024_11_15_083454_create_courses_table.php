@@ -39,6 +39,7 @@ return new class extends Migration
             $table->string('photos3')->nullable();
             $table->string('photos4')->nullable();
 
+            $table->tinyInteger('isActive')->default('1');
             $table->text('description');                    // Description
 
             $table->foreignIdFor(Mentor::class);              // Id milik mentor

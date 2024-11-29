@@ -17,7 +17,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $course = Course::all();
+        $course = Course::where('isActive', 1)->get();
         return Inertia::render('Admin/Course/Index', [
             'course' => $course
         ]);
@@ -173,7 +173,7 @@ class CourseController extends Controller
      */
     public function edit(string $id)
     {
-        $course = Course::find($id)->with('mentor')->first();
+        $course = Course::with('mentor')->find($id);
         $mentors = Mentor::all();
         return Inertia::render('Admin/Course/Edit', [
             'course' => $course,
@@ -244,21 +244,21 @@ class CourseController extends Controller
         }
 
         if(isset($request->new_schedule_img)){
-            if(isset($course->photos4)){
-                Storage::delete($course->photos4);
+            if(isset($course->schedule_img)){
+                Storage::delete($course->schedule_img);
             }
             $course->schedule_img = $request->file('new_schedule_img')->store('course/schedule', 'public');
         } else {
-            $course->schedule_img = $request->photos4;
+            $course->schedule_img = $request->schedule_img;
         }
 
         if(isset($request->new_banner)){
             if(isset($course->banner)){
                 Storage::delete($course->banner);
             }
-            $course->banner = $request->file('new_banner')->store('course/banner', 'public');
+            $course->banner_img = $request->file('new_banner')->store('course/banner', 'public');
         } else {
-            $course->banner = $request->banner;
+            $course->banner_img = $request->banner;
         }
 
         $course->title                  =   $request->title;
@@ -330,7 +330,8 @@ class CourseController extends Controller
         // ]);
         try {
             $course = Course::find($id);
-            $course->delete();
+            $course->isActive = 0;
+            $course->save();
 
             return redirect()->route('course.index')->with('success','Berhasil menghapus kelas');
         } catch (\Throwable $th) {

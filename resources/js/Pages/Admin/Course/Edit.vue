@@ -33,6 +33,7 @@ const form = useForm({
     facility: page.props.course.facility,
     benefit: page.props.course.benefit,
     suitable_person: page.props.course.suitable_person,
+    registration_link: page.props.course.registration_link,
 
     photos1: page.props.course.photos1,
     photos2: page.props.course.photos2,
@@ -165,13 +166,13 @@ input:disabled {
 </style>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Class Edit" />
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-gradient-to-b from-gray-100 to-gray-200 shadow sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <h3 class="text-3xl mb-3"><b>Buat Kelas</b></h3>
+                    <h3 class="text-3xl mb-3"><b>Edit Kelas</b></h3>
 
                     <form @submit.prevent="submit" enctype="multipart/form-data" class="mt-2 p-4">
                         <input type="hidden" name="_token" :value="csrfToken">

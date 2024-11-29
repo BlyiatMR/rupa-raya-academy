@@ -56,46 +56,46 @@ const submit = () => {
 const bannerFile = (event) => {
     if (event.target.files.length > 0) {
         form.banner = event.target.files[0];
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 };
 
 const scheduleFile = (event) => {
     if (event.target.files.length > 0) {
         form.schedule_img = event.target.files[0];
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 };
 
 const photos1File = (event) => {
     if (event.target.files.length > 0) {
         form.photos1 = event.target.files[0];
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 };
 const photos2File = (event) => {
     if (event.target.files.length > 0) {
         form.photos2 = event.target.files[0];
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 };
 const photos3File = (event) => {
     if (event.target.files.length > 0) {
         form.photos3 = event.target.files[0];
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 };
 const photos4File = (event) => {
     if (event.target.files.length > 0) {
         form.photos4 = event.target.files[0];
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 };
 
 const mentorFile = (event) => {
     if (event.target.files.length > 0) {
         form.mentor_profile_img = event.target.files[0];
-        console.log(event.target.files[0]);
+        // console.log(event.target.files[0]);
     }
 };
 

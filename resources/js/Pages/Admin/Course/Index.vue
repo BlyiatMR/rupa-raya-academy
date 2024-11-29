@@ -1,23 +1,16 @@
 <script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 </script>
-
+<script>
+import AdminNavbar from '@/Components/AdminNavbar.vue'
+</script>
 <template>
-    <Head title="Dashboard" />
-
-        <template>
-            <h2
-                class="text-xl font-semibold leading-tight text-gray-800"
-            >
-                Course
-            </h2>
-        </template>
-
-        <div class="py-12">
-            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <Head title="Dashboard Class" />
+        <div class="lg:flex">
+            <AdminNavbar></AdminNavbar>
+            <div class="w-full max-lg:mt-[80px]">
                 <div
-                    class="overflow-hidden bg-gray-100 shadow sm:rounded-lg"
+                    class="overflow-hidden bg-gray-200"
                 >
 
                     <div class="p-6 text-gray-900">
@@ -37,14 +30,13 @@ import { Head } from '@inertiajs/vue3';
                         </div>
                         <!-- Success message end -->
                         <p class="mb-3 text-right">
-                            <a class="py-1 px-3 bg-gray-300 rounded" href="/class/create">Buat kelas</a>
+                            <Link class="py-1 px-3 bg-gray-300 rounded" :href="route('course.create')">Buat kelas</Link>
                         </p>
 
                         <div class="flex flex-wrap">
-                            <div class="flex-[0_0_33%] p-2" v-for="(item, index) in $page.props.course" :key="index">
+                            <div class="w-[380px] p-2" v-for="(item, index) in $page.props.course" :key="index">
                                 <div class="bg-gray-300 mt-2 px-4 py-2 rounded shadow">
-                                    No : {{ index + 1 }}
-                                    <img :src="'/storage/'+item.banner_img" height="300" class="mb-3 h-[300px] w-full object-cover">
+                                    <img :src="'/storage/'+item.banner_img" height="300" class="mb-3 h-[300px] w-full ">
                                     <div class="flex justify-between mb-1">
                                         <p>{{ item.type }}</p>
                                         <p>{{ item.start_date }}</p>
@@ -54,9 +46,9 @@ import { Head } from '@inertiajs/vue3';
                                     <!-- <p>{{ item.description }}</p> -->
                                     <p>{{ item.price }}</p>
                                     <div class="space-x-2">
-                                        <a class="text-blue-600 underline" :href="'/class/edit/' + item.id">edit</a>
-                                        <a class="text-blue-600 underline" :href="'/class/delete/' + item.id">delete</a>
-                                        <a class="text-blue-600 underline" :href="'/class/detail/' + item.slug">detail</a>
+                                        <Link class="text-blue-600 underline" :href="route('course.edit', item.id)">edit</Link>
+                                        <Link class="text-blue-600 underline" :href="route('course.delete', item.id)">delete</Link>
+                                        <Link class="text-blue-600 underline" :href="route('course.detail', item.slug)">detail</Link>
                                     </div>
                                 </div>
                             </div>

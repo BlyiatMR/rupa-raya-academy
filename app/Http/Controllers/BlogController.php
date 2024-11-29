@@ -2,25 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class AdminController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $totalClass = Course::where('isActive','1')->count();
-        // $totalBlog = Course::where('isActive','1')->count();
-        // $totalGallery = Course::where('isActive','1')->count();
-        return Inertia::render('Admin/Dashboard', [
-            'totalClass' => $totalClass,
-            // 'totalBlog' => $totalBlog,
-            // 'totalGallery' => $totalGallery,
-        ]);
+        return Inertia::render('Admin/Blog/Index');
     }
 
     /**
